@@ -1,9 +1,11 @@
 {
   "i18n": true,
   "type": "panel",
+  "label": "General",
   "items": {
     "credentialsRow": {
       "type": "panel",
+      "label": "API",
       "items": {
         "username": {
           "type": "text",
@@ -31,17 +33,18 @@
     },
     "checkboxGrid": {
       "type": "panel",
+      "label": "Fields selection",
       "items": {
         "row1": {
           "type": "panel",
           "sm": 12,
           "md": 3,
           "items": {
-            "checkbox_1": { "type": "checkbox", "label": "isin" },
-            "checkbox_2": { "type": "checkbox", "label": "symbol" },
-            "checkbox_3": { "type": "checkbox", "label": "name" },
-            "checkbox_4": { "type": "checkbox", "label": "currency" },
-            "checkbox_5": { "type": "checkbox", "label": "country" }
+            "isin": { "type": "checkbox", "label": "isin" },
+            "symbol": { "type": "checkbox", "label": "symbol" },
+            "name": { "type": "checkbox", "label": "name" },
+            "currency": { "type": "checkbox", "label": "currency" },
+            "country": { "type": "checkbox", "label": "country" }
           }
         },
         "row2": {
@@ -49,11 +52,11 @@
           "sm": 12,
           "md": 3,
           "items": {
-            "checkbox_6": { "type": "checkbox", "label": "last" },
-            "checkbox_7": { "type": "checkbox", "label": "low" },
-            "checkbox_8": { "type": "checkbox", "label": "high" },
-            "checkbox_9": { "type": "checkbox", "label": "prevDay" },
-            "checkbox_10": { "type": "checkbox", "label": "percent" }
+            "last": { "type": "checkbox", "label": "last" },
+            "low": { "type": "checkbox", "label": "low" },
+            "high": { "type": "checkbox", "label": "high" },
+            "prevDay": { "type": "checkbox", "label": "prevDay" },
+            "percent": { "type": "checkbox", "label": "percent" }
           }
         },
         "row3": {
@@ -61,14 +64,35 @@
           "sm": 12,
           "md": 3,
           "items": {
-            "checkbox_11": { "type": "checkbox", "label": "w52High" },
-            "checkbox_12": { "type": "checkbox", "label": "w52HighDate" },
-            "checkbox_13": { "type": "checkbox", "label": "w52low" },
-            "checkbox_14": { "type": "checkbox", "label": "w52LowDate" },
-            "checkbox_15": { "type": "checkbox", "label": "w52Close" }
+            "w52High": { "type": "checkbox", "label": "w52High" },
+            "w52HighDate": { "type": "checkbox", "label": "w52HighDate" },
+            "w52low": { "type": "checkbox", "label": "w52low" },
+            "w52low": { "type": "checkbox", "label": "w52LowDate" },
+            "w52Close": { "type": "checkbox", "label": "w52Close" }
           }
         }
       }
-    }
+    },
+    "divider": {
+      "type": "divider"
+    },
+    "calculationRow": {
+      "type": "panel",
+      "label": "Calculation",
+      "items": {
+        "average": {
+          "type": "checkbox",
+          "label": "Average",
+          "sm": 12,
+          "md": 4
+        },
+        "regression": {
+          "type": "checkbox",
+          "label": "Regression",
+          "sm": 12,
+          "md": 4
+        }
+      }
+    },
   }
 }
