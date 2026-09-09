@@ -20,14 +20,13 @@
         "synctime": {
           "type": "cron",
           "simple": true,
-          "complex": true,
           "label": "Sync time",
           "sm": 12,
           "md": 4
         }
       }
     },
-    "devider": {
+    "divider": {
       "type": "divider"
     },
     "checkboxGrid": {
