@@ -3,7 +3,7 @@
   "type": "panel",
   "items": {
     "credentialsRow": {
-      "type": "row",
+      "type": "panel",
       "items": {
         "username": {
           "type": "text",
@@ -18,7 +18,9 @@
           "md": 4
         },
         "synctime": {
-          "type": "time",
+          "type": "cron",
+          "simple": true,
+          "complex": true,
           "label": "Sync time",
           "sm": 12,
           "md": 4
@@ -29,7 +31,7 @@
       "type": "divider"
     },
     "checkboxGrid": {
-      "type": "row",
+      "type": "panel",
       "items": {
         "row1": {
           "type": "panel",
