@@ -1,26 +1,73 @@
 {
-	"i18n": true,
-	"type": "panel",
-	"items": {
-		"option1": {
-			"type": "checkbox",
-			"label": "option1",
-			"newLine": true,
-			"xs": 12,
-			"sm": 12,
-			"md": 6,
-			"lg": 4,
-			"xl": 4
-		},
-		"option2": {
-			"type": "text",
-			"label": "option2",
-			"newLine": true,
-			"xs": 12,
-			"sm": 12,
-			"md": 6,
-			"lg": 4,
-			"xl": 4
-		}
-	}
+  "i18n": true,
+  "type": "panel",
+  "items": {
+    "credentialsRow": {
+      "type": "row",
+      "items": {
+        "username": {
+          "type": "text",
+          "label": "Username",
+          "sm": 12,
+          "md": 4
+        },
+        "password": {
+          "type": "password",
+          "label": "Password",
+          "sm": 12,
+          "md": 4
+        },
+        "synctime": {
+          "type": "time",
+          "label": "Sync time",
+          "sm": 12,
+          "md": 4
+        }
+      }
+    },
+    "devider": {
+      "type": "divider"
+    },
+    "checkboxGrid": {
+      "type": "row",
+      "items": {
+        "row1": {
+          "type": "panel",
+          "sm": 12,
+          "md": 3,
+          "items": {
+            "checkbox_1": { "type": "checkbox", "label": "isin" },
+            "checkbox_2": { "type": "checkbox", "label": "symbol" },
+            "checkbox_3": { "type": "checkbox", "label": "name" },
+            "checkbox_4": { "type": "checkbox", "label": "currency" },
+            "checkbox_5": { "type": "checkbox", "label": "country" }
+          }
+        },
+        "row2": {
+          "type": "panel",
+          "sm": 12,
+          "md": 3,
+          "items": {
+            "checkbox_6": { "type": "checkbox", "label": "last" },
+            "checkbox_7": { "type": "checkbox", "label": "low" },
+            "checkbox_8": { "type": "checkbox", "label": "high" },
+            "checkbox_9": { "type": "checkbox", "label": "prevDay" },
+            "checkbox_10": { "type": "checkbox", "label": "percent" }
+          }
+        },
+        "row3": {
+          "type": "panel",
+          "sm": 12,
+          "md": 3,
+          "items": {
+            "checkbox_11": { "type": "checkbox", "label": "w52High" },
+            "checkbox_12": { "type": "checkbox", "label": "w52HighDate" },
+            "checkbox_13": { "type": "checkbox", "label": "w52low" },
+            "checkbox_14": { "type": "checkbox", "label": "w52LowDate" },
+            "checkbox_15": { "type": "checkbox", "label": "w52Close" }
+          }
+        }
+      }
+    }
+  }
 }
