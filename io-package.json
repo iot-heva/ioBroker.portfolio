@@ -1,0 +1,89 @@
+{
+	"common": {
+		"name": "portfolio",
+		"version": "0.0.1",
+		"news": {
+			"0.0.1": {
+				"en": "initial release",
+				"de": "Erstveröffentlichung",
+				"ru": "Начальная версия",
+				"pt": "lançamento inicial",
+				"nl": "Eerste uitgave",
+				"fr": "Première version",
+				"it": "Versione iniziale",
+				"es": "Versión inicial",
+				"pl": "Pierwsze wydanie",
+				"uk": "Початкова версія",
+				"zh-cn": "首次出版"
+			}
+		},
+		"titleLang": {
+			"en": "Portfolio",
+			"de": "Portfolio",
+			"ru": "Портфель",
+			"pt": "Portfólio",
+			"nl": "Portefeuille",
+			"fr": "Portefeuille",
+			"it": "Portfolio",
+			"es": "Cartera",
+			"pl": "Teczka",
+			"uk": "Портфоліо",
+			"zh-cn": "文件夹"
+		},
+		"desc": {
+			"en": "Regular stock price checks, fundamental analysis, price alerts, etc.",
+			"de": "Regelmäßige Aktienkursprüfungen, Fundamentalanalysen, Preisalarme usw.",
+			"ru": "Регулярные проверки цен на акции, фундаментальный анализ, оповещения о ценах и т. д.",
+			"pt": "Verificações regulares de preços de ações, análises fundamentais, alertas de preços, etc.",
+			"nl": "Regelmatige controles van de aandelenkoersen, fundamentele analyses, prijswaarschuwingen, enz.",
+			"fr": "Vérifications régulières du cours des actions, analyse fondamentale, alertes de prix, etc.",
+			"it": "Controlli regolari del prezzo delle azioni, analisi fondamentale, avvisi sui prezzi, ecc.",
+			"es": "Comprobaciones periódicas del precio de las acciones, análisis fundamentales, alertas de precios, etc.",
+			"pl": "Regularne kontrole cen akcji, analizy fundamentalne, alerty cenowe itp.",
+			"uk": "Регулярні перевірки цін на акції, фундаментальний аналіз, сповіщення про ціни тощо.",
+			"zh-cn": "定期股价检查、基本面分析、价格提醒等。"
+		},
+		"authors": [
+			"heva13 <iot.heva@outlook.de>"
+		],
+		"keywords": [
+			"stock exchange",
+			"stock alerts"
+		],
+		"licenseInformation": {
+			"type": "free",
+			"license": "MIT"
+		},
+		"platform": "Javascript/Node.js",
+		"icon": "portfolio.png",
+		"enabled": true,
+		"extIcon": "https://raw.githubusercontent.com/iot-heva/ioBroker.portfolio/main/admin/portfolio.png",
+		"readme": "https://github.com/iot-heva/ioBroker.portfolio/blob/main/README.md",
+		"loglevel": "info",
+		"tier": 3,
+		"mode": "daemon",
+		"type": "misc-data",
+		"compact": true,
+		"connectionType": "cloud",
+		"dataSource": "poll",
+		"adminUI": {
+			"config": "json"
+		},
+		"dependencies": [
+			{
+				"js-controller": ">=6.0.11"
+			}
+		],
+		"globalDependencies": [
+			{
+				"admin": ">=7.0.23"
+			}
+		]
+	},
+	"native": {
+		"option1": true,
+		"option2": "42"
+	},
+	"objects": [],
+	"instanceObjects": []
+}
