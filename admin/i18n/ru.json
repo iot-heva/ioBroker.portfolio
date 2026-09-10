@@ -4,7 +4,7 @@
 	"lblWatch": "Наблюдение",
 	"lblUsername": "Имя пользователя",
 	"lblPassword": "Пароль",
-	"lblSynctime": "Время синхронизации",
+	"lblSyncTime": "Время синхронизации",
 	"lblHistoryInstance": "Экземпляр истории",
 	"lblFields": "Поля запроса",
 	"lblIsin": "ISIN",

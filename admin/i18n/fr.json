@@ -4,7 +4,7 @@
 	"lblWatch": "Surveiller",
 	"lblUsername": "Nom d'utilisateur",
 	"lblPassword": "Mot de passe",
-	"lblSynctime": "Heure de synchronisation",
+	"lblSyncTime": "Heure de synchronisation",
 	"lblHistoryInstance": "Instance d'historique",
 	"lblFields": "Champs de requête",
 	"lblIsin": "ISIN",
