@@ -140,10 +140,10 @@
               },
               {
                   "type": "text",
-                  "attr": "name",
-                  "title": "lblName",
+                  "attr": "comment",
+                  "title": "lblComment",
                   "sort": true,
-                  "width": "45%"
+                  "width": "25%"
               },
               {
                   "type": "number",
@@ -151,8 +151,10 @@
                   "default": 0,
                   "attr": "limitHigh",
                   "title": "lblLimitHigh",
+                  "disabled": "data.limitHighEnabled === false",
+                  "hidden": "data.limitHighEnabled === false",
                   "sort": true,
-                  "width": "15%"
+                  "width": "10%"
               },
               {
                   "type": "number",
@@ -160,8 +162,32 @@
                   "default": 0,
                   "attr": "limitLow",
                   "title": "lblLimitLow",
+                  "disabled": "data.limitLowEnabled === false",
+                  "hidden": "data.limitLowEnabled === false",
                   "sort": true,
-                  "width": "15%"
+                  "width": "10%"
+              },
+              {
+                  "type": "number",
+                  "min": 0,
+                  "default": 0,
+                  "attr": "regression",
+                  "title": "lblRegression",
+                  "disabled": "data.regressionEnabled === false",
+                  "hidden": "data.regressionEnabled === false",
+                  "sort": true,
+                  "width": "10%"
+              },
+              {
+                  "type": "number",
+                  "min": 0,
+                  "default": 0,
+                  "attr": "average",
+                  "title": "lblAverage",
+                  "disabled": "data.averageEnabled === false",
+                  "hidden": "data.averageEnabled === false",
+                  "sort": true,
+                  "width": "10%"
               }
             ]
         }
