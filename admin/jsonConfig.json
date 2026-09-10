@@ -12,35 +12,34 @@
             "username": {
               "type": "text",
               "label": "lblUsername",
-              "sm": 12,
-              "md": 4
+              "sm": 6,
+              "md": 3
             },
             "password": {
               "type": "password",
               "label": "lblPassword",
-              "sm": 12,
-              "md": 4
+              "sm": 6,
+              "md": 3
             },
             "synctime": {
               "type": "cron",
               "simple": true,
               "label": "lblSynctime",
-              "sm": 12,
-              "md": 4
+              "sm": 6,
+              "md": 3
             },
             "historyInstance": {
               "type": "instance",
               "adapter": "_dataSources",
-              "adapters": ["history", "influxdb", "sql"],
               "label": "lblHistoryInstance",
-              "sm": 12,
-              "md": 4
+              "sm": 6,
+              "md": 3
             }
           }
         },
         "_divider1": {
           "type": "divider",
-          "height": 4
+          "height": 2
         },
         "_fieldsText": {
             "newLine": true,
@@ -52,7 +51,7 @@
           "items": {
             "_fields1": {
               "type": "panel",
-              "sm": 12,
+              "sm": 6,
               "md": 4,
               "items": {
                 "isin": { "type": "checkbox", "label": "lblIsin" },
@@ -64,26 +63,26 @@
             },
             "_fields2": {
               "type": "panel",
-              "sm": 12,
+              "sm": 6,
               "md": 4,
               "items": {
                 "last": { "type": "checkbox", "label": "lblLast", "default": true, "disabled": "true" },
-                "low": { "type": "checkbox", "label": "lblLow" },
                 "high": { "type": "checkbox", "label": "lblHigh" },
+                "low": { "type": "checkbox", "label": "lblLow" },
                 "prevDay": { "type": "checkbox", "label": "lblPrevDay" },
                 "performance": { "type": "checkbox", "label": "lblPerformance" }
               }
             },
             "_fields3": {
               "type": "panel",
-              "sm": 12,
+              "sm": 6,
               "md": 4,
               "items": {
+                "w52Close": { "type": "checkbox", "label": "lblW52Close" },
                 "w52High": { "type": "checkbox", "label": "lblW52High" },
                 "w52HighDate": { "type": "checkbox", "label": "lblW52HighDate" },
                 "w52Low": { "type": "checkbox", "label": "lblW52Low" },
-                "w52LowDate": { "type": "checkbox", "label": "lblW52LowDate" },
-                "w52Close": { "type": "checkbox", "label": "lblW52Close" }
+                "w52LowDate": { "type": "checkbox", "label": "lblW52LowDate" }
               }
             }
           }
@@ -97,7 +96,7 @@
           "items": {
             "_limit": {
               "type": "panel",
-              "sm": 12,
+              "sm": 6,
               "md": 4,
               "items": {
                 "_limitText": { "type": "staticText", "text": "lblLimit" },
@@ -107,7 +106,7 @@
             },
             "_calculation": {
               "type": "panel",
-              "sm": 12,
+              "sm": 6,
               "md": 4,
               "items": {
                 "_calculationText": { "type": "staticText", "text": "lblCalculation" },
@@ -126,8 +125,10 @@
         "_isinsTable": {
           "newLine": true,
           "type": "table",
+          "export": true,
+          "import": true,
           "sm": 12,
-          "md": 4,
+          "md": 12,
           "items": [
               {
                   "type": "text",
