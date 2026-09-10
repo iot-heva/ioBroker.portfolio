@@ -21,7 +21,8 @@
     "node": ">= 20"
   },
   "dependencies": {
-    "@iobroker/adapter-core": "^3.4.3"
+    "@iobroker/adapter-core": "^3.4.3",
+    "amazon-cognito-identity-js": "^6.3.20"
   },
   "devDependencies": {
     "@alcalzone/release-script": "^5.2.1",
