@@ -1,5 +1,25 @@
 {
-	"portfolio adapter settings": "portfolio的适配器设置",
-	"option1": "选项1",
-	"option2": "选项2"
+	"portfolio adapter settings": "适配器设置",
+	"lblUsername": "用户名",
+	"lblPassword": "密码",
+	"lblSynctime": "同步时间",
+	"lblIsin": "ISIN",
+	"lblSymbol": "代码",
+	"lblName": "名称",
+	"lblCurrency": "货币",
+	"lblCountry": "国家",
+	"lblLast": "最新价",
+	"lblLow": "当日最低价",
+	"lblHigh": "当日最高价",
+	"lblPrevDay": "前一日",
+	"lblPerformance": "本年表现",
+	"lblW52High": "52周最高价",
+	"lblW52HighDate": "52周最高价日期",
+	"lblW52low": "52周最低价",
+	"lblW52LowDate": "52周最低价日期",
+	"lblW52Close": "52周收盘价",
+	"lblRegression": "线性回归",
+	"lblAverage": "移动平均",
+	"lblLimitLow": "下限",
+	"lblLimitHigh": "上限"
 }

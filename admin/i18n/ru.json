@@ -1,5 +1,25 @@
 {
-	"portfolio adapter settings": "Настройки адаптера для portfolio",
-	"option1": "вариант 1",
-	"option2": "вариант 2"
+	"portfolio adapter settings": "Настройки адаптера",
+	"lblUsername": "Имя пользователя",
+	"lblPassword": "Пароль",
+	"lblSynctime": "Время синхронизации",
+	"lblIsin": "ISIN",
+	"lblSymbol": "Символ",
+	"lblName": "Название",
+	"lblCurrency": "Валюта",
+	"lblCountry": "Страна",
+	"lblLast": "Последняя цена",
+	"lblLow": "Минимум дня",
+	"lblHigh": "Максимум дня",
+	"lblPrevDay": "Предыдущий день",
+	"lblPerformance": "Дох. тек. года",
+	"lblW52High": "Макс. 52 нед.",
+	"lblW52HighDate": "Дата макс. 52 нед.",
+	"lblW52low": "Мин. 52 нед.",
+	"lblW52LowDate": "Дата мин. 52 нед.",
+	"lblW52Close": "Закрытие 52 нед.",
+	"lblRegression": "Линейная регрессия",
+	"lblAverage": "Скользящее среднее",
+	"lblLimitLow": "Нижний предел",
+	"lblLimitHigh": "Верхний предел"
 }

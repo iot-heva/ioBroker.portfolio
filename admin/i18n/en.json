@@ -1,5 +1,25 @@
 {
-	"portfolio adapter settings": "Adapter settings for portfolio",
-	"option1": "option1",
-	"option2": "option2"
+	"portfolio adapter settings": "Adapter settings",
+	"lblUsername": "Username",
+	"lblPassword": "Password",
+	"lblSynctime": "Synchronization time",
+	"lblIsin": "ISIN",
+	"lblSymbol": "Symbol",
+	"lblName": "Name",
+	"lblCurrency": "Currency",
+	"lblCountry": "Country",
+	"lblLast": "Last price",
+	"lblLow": "Day low",
+	"lblHigh": "Day high",
+	"lblPrevDay": "Previous day",
+	"lblPerformance": "Perf. curr. year",
+	"lblW52High": "52 wk high",
+	"lblW52HighDate": "52 wk high date",
+	"lblW52low": "52 wk low",
+	"lblW52LowDate": "52 wk low date",
+	"lblW52Close": "52 wk close",
+	"lblRegression": "Linear regression",
+	"lblAverage": "Moving average",
+	"lblLimitLow": "Lower limit",
+	"lblLimitHigh": "Upper limit"
 }

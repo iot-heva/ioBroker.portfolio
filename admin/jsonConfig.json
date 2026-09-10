@@ -1,98 +1,106 @@
 {
   "i18n": true,
   "type": "panel",
-  "label": "General",
   "items": {
-    "credentialsRow": {
+    "_credentials": {
       "type": "panel",
-      "label": "API",
       "items": {
         "username": {
           "type": "text",
-          "label": "Username",
+          "label": "lblUsername",
           "sm": 12,
           "md": 4
         },
         "password": {
           "type": "password",
-          "label": "Password",
+          "label": "lblPassword",
           "sm": 12,
           "md": 4
         },
         "synctime": {
           "type": "cron",
           "simple": true,
-          "label": "Sync time",
+          "label": "lblSynctime",
           "sm": 12,
           "md": 4
         }
       }
     },
-    "divider": {
+    "_divider1": {
       "type": "divider"
     },
     "checkboxGrid": {
       "type": "panel",
-      "label": "Fields selection",
       "items": {
-        "row1": {
+        "_fields1": {
           "type": "panel",
           "sm": 12,
           "md": 3,
           "items": {
-            "isin": { "type": "checkbox", "label": "isin" },
-            "symbol": { "type": "checkbox", "label": "symbol" },
-            "name": { "type": "checkbox", "label": "name" },
-            "currency": { "type": "checkbox", "label": "currency" },
-            "country": { "type": "checkbox", "label": "country" }
+            "isin": { "type": "checkbox", "label": "lblIsin" },
+            "symbol": { "type": "checkbox", "label": "lblSymbol" },
+            "name": { "type": "checkbox", "label": "lblName" },
+            "currency": { "type": "checkbox", "label": "lblCurrency" },
+            "country": { "type": "checkbox", "label": "lblCountry" }
           }
         },
-        "row2": {
+        "_fields2": {
           "type": "panel",
           "sm": 12,
           "md": 3,
           "items": {
-            "last": { "type": "checkbox", "label": "last" },
-            "low": { "type": "checkbox", "label": "low" },
-            "high": { "type": "checkbox", "label": "high" },
-            "prevDay": { "type": "checkbox", "label": "prevDay" },
-            "percent": { "type": "checkbox", "label": "percent" }
+            "last": { "type": "checkbox", "label": "lblLast" },
+            "low": { "type": "checkbox", "label": "lblLow" },
+            "high": { "type": "checkbox", "label": "lblHigh" },
+            "prevDay": { "type": "checkbox", "label": "lblPrevDay" },
+            "performance": { "type": "checkbox", "label": "lblPerformance" }
           }
         },
-        "row3": {
+        "_fields3": {
           "type": "panel",
           "sm": 12,
           "md": 3,
           "items": {
-            "w52High": { "type": "checkbox", "label": "w52High" },
-            "w52HighDate": { "type": "checkbox", "label": "w52HighDate" },
-            "w52low": { "type": "checkbox", "label": "w52low" },
-            "w52low": { "type": "checkbox", "label": "w52LowDate" },
-            "w52Close": { "type": "checkbox", "label": "w52Close" }
+            "w52High": { "type": "checkbox", "label": "lblW52High" },
+            "w52HighDate": { "type": "checkbox", "label": "lblW52HighDate" },
+            "w52low": { "type": "checkbox", "label": "lblW52low" },
+            "w52LowDate": { "type": "checkbox", "label": "lblW52LowDate" },
+            "w52Close": { "type": "checkbox", "label": "lblW52Close" }
           }
         }
       }
     },
-    "divider": {
+    "_divider2": {
       "type": "divider"
     },
-    "calculationRow": {
+    "_calculation": {
       "type": "panel",
-      "label": "Calculation",
       "items": {
-        "average": {
+        "regression": {
           "type": "checkbox",
-          "label": "Average",
+          "label": "lblRegression",
           "sm": 12,
           "md": 4
         },
-        "regression": {
+        "average": {
           "type": "checkbox",
-          "label": "Regression",
+          "label": "lblAverage",
+          "sm": 12,
+          "md": 4
+        },
+        "limitLow": {
+          "type": "checkbox",
+          "label": "lblLimitLow",
+          "sm": 12,
+          "md": 4
+        },
+        "limitHigh": {
+          "type": "checkbox",
+          "label": "lblLimitHigh",
           "sm": 12,
           "md": 4
         }
       }
-    },
+    }
   }
 }
