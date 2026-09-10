@@ -81,12 +81,7 @@
 		]
 	},
 	"native": {
-		"isin": [],
-		"name": [],
-		"limitHigh": [],
-		"limitLow": [],
-		"option1": true,
-		"option2": "42"
+		"isinsTable": []
 	},
 	"objects": [],
 	"instanceObjects": []

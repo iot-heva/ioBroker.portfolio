@@ -2,7 +2,7 @@
   "i18n": true,
   "type": "tabs",
   "items": {
-    "generalTab": {
+    "_generalTab": {
       "label": "lblGeneral",
       "type": "panel",
       "items": {
@@ -118,11 +118,11 @@
         }
       }
     },
-    "isinsTab": {
+    "_isinsTab": {
       "label": "lblWatch",
       "type": "panel",
       "items": {
-        "_isinsTable": {
+        "isinsTable": {
           "newLine": true,
           "type": "table",
           "export": true,
