@@ -1,8 +1,11 @@
 {
 	"portfolio adapter settings": "Adapterinstellingen",
+	"lblGeneral": "Algemeen",
+	"lblWatch": "Bewaken",
 	"lblUsername": "Gebruikersnaam",
 	"lblPassword": "Wachtwoord",
 	"lblSynctime": "Synchronisatietijd",
+	"lblFields": "Velden",
 	"lblIsin": "ISIN",
 	"lblSymbol": "Symbool",
 	"lblName": "Naam",
@@ -15,11 +18,13 @@
 	"lblPerformance": "Perf. huidig jaar",
 	"lblW52High": "52 wk hoog",
 	"lblW52HighDate": "Datum 52 wk hoog",
-	"lblW52low": "52 wk laag",
+	"lblW52Low": "52 wk laag",
 	"lblW52LowDate": "Datum 52 wk laag",
 	"lblW52Close": "52 wk slot",
-	"lblRegression": "Lineaire regressie",
-	"lblAverage": "Voortschrijdend gemiddelde",
+	"lblLimit": "Grenzen",
 	"lblLimitLow": "Ondergrens",
-	"lblLimitHigh": "Bovengrens"
+	"lblLimitHigh": "Bovengrens",
+	"lblCalculation": "Berekening",
+	"lblRegression": "Lineaire regressie",
+	"lblAverage": "Voortschrijdend gemiddelde"
 }

@@ -1,8 +1,11 @@
 {
 	"portfolio adapter settings": "Налаштування адаптера",
+	"lblGeneral": "Загальні",
+	"lblWatch": "Спостереження",
 	"lblUsername": "Ім'я користувача",
 	"lblPassword": "Пароль",
 	"lblSynctime": "Час синхронізації",
+	"lblFields": "Поля",
 	"lblIsin": "ISIN",
 	"lblSymbol": "Символ",
 	"lblName": "Назва",
@@ -15,11 +18,13 @@
 	"lblPerformance": "Дох. пот. року",
 	"lblW52High": "Макс. 52 тиж.",
 	"lblW52HighDate": "Дата макс. 52 тиж.",
-	"lblW52low": "Мін. 52 тиж.",
+	"lblW52Low": "Мін. 52 тиж.",
 	"lblW52LowDate": "Дата мін. 52 тиж.",
 	"lblW52Close": "Закриття 52 тиж.",
-	"lblRegression": "Лінійна регресія",
-	"lblAverage": "Ковзне середнє",
+	"lblLimit": "Межі",
 	"lblLimitLow": "Нижня межа",
-	"lblLimitHigh": "Верхня межа"
+	"lblLimitHigh": "Верхня межа",
+	"lblCalculation": "Розрахунок",
+	"lblRegression": "Лінійна регресія",
+	"lblAverage": "Ковзне середнє"
 }

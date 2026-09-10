@@ -1,8 +1,11 @@
 {
 	"portfolio adapter settings": "适配器设置",
+	"lblGeneral": "常规",
+	"lblWatch": "观察",
 	"lblUsername": "用户名",
 	"lblPassword": "密码",
 	"lblSynctime": "同步时间",
+	"lblFields": "字段",
 	"lblIsin": "ISIN",
 	"lblSymbol": "代码",
 	"lblName": "名称",
@@ -15,11 +18,13 @@
 	"lblPerformance": "本年表现",
 	"lblW52High": "52周最高价",
 	"lblW52HighDate": "52周最高价日期",
-	"lblW52low": "52周最低价",
+	"lblW52Low": "52周最低价",
 	"lblW52LowDate": "52周最低价日期",
 	"lblW52Close": "52周收盘价",
-	"lblRegression": "线性回归",
-	"lblAverage": "移动平均",
+	"lblLimit": "限制",
 	"lblLimitLow": "下限",
-	"lblLimitHigh": "上限"
+	"lblLimitHigh": "上限",
+	"lblCalculation": "计算",
+	"lblRegression": "线性回归",
+	"lblAverage": "移动平均"
 }

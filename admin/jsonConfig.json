@@ -1,104 +1,159 @@
 {
   "i18n": true,
-  "type": "panel",
+  "type": "tabs",
   "items": {
-    "_credentials": {
+    "generalTab": {
+      "label": "lblGeneral",
       "type": "panel",
       "items": {
-        "username": {
+        "_credentials": {
+          "type": "panel",
+          "items": {
+            "username": {
+              "type": "text",
+              "label": "lblUsername",
+              "sm": 12,
+              "md": 4
+            },
+            "password": {
+              "type": "password",
+              "label": "lblPassword",
+              "sm": 12,
+              "md": 4
+            },
+            "synctime": {
+              "type": "cron",
+              "simple": true,
+              "label": "lblSynctime",
+              "sm": 12,
+              "md": 4
+            }
+          }
+        },
+        "_divider1": {
+          "type": "divider",
+          "height": 4
+        },
+        "_fieldsText": {
+            "newLine": true,
+            "type": "staticText",
+            "text": "lblFields"
+        },
+        "_fieldsGrid": {
+          "type": "panel",
+          "label": "lblFields",
+          "items": {
+            "_fields1": {
+              "type": "panel",
+              "sm": 12,
+              "md": 4,
+              "items": {
+                "isin": { "type": "checkbox", "label": "lblIsin" },
+                "symbol": { "type": "checkbox", "label": "lblSymbol" },
+                "name": { "type": "checkbox", "label": "lblName" },
+                "currency": { "type": "checkbox", "label": "lblCurrency" },
+                "country": { "type": "checkbox", "label": "lblCountry" }
+              }
+            },
+            "_fields2": {
+              "type": "panel",
+              "sm": 12,
+              "md": 4,
+              "items": {
+                "last": { "type": "checkbox", "label": "lblLast", "default": true, "disabled": "true" },
+                "low": { "type": "checkbox", "label": "lblLow" },
+                "high": { "type": "checkbox", "label": "lblHigh" },
+                "prevDay": { "type": "checkbox", "label": "lblPrevDay" },
+                "performance": { "type": "checkbox", "label": "lblPerformance" }
+              }
+            },
+            "_fields3": {
+              "type": "panel",
+              "sm": 12,
+              "md": 4,
+              "items": {
+                "w52High": { "type": "checkbox", "label": "lblW52High" },
+                "w52HighDate": { "type": "checkbox", "label": "lblW52HighDate" },
+                "w52Low": { "type": "checkbox", "label": "lblW52Low" },
+                "w52LowDate": { "type": "checkbox", "label": "lblW52LowDate" },
+                "w52Close": { "type": "checkbox", "label": "lblW52Close" }
+              }
+            }
+          }
+        },
+        "_divider2": {
+          "type": "divider",
+          "height": 2
+        },
+        "_additionalGrid": {
+          "type": "panel",
+          "items": {
+            "_limit": {
+              "type": "panel",
+              "sm": 12,
+              "md": 4,
+              "items": {
+                "_limitText": { "type": "staticText", "text": "lblLimit" },
+                "limitHigh": { "type": "checkbox", "label": "lblLimitHigh" },
+                "limitLow": { "type": "checkbox", "label": "lblLimitLow" }
+              }
+            },
+            "_calculation": {
+              "type": "panel",
+              "sm": 12,
+              "md": 4,
+              "items": {
+                "_calculationText": { "type": "staticText", "text": "lblCalculation" },
+                "regression": { "type": "checkbox", "label": "lblRegression" },
+                "average": { "type": "checkbox", "label": "lblAverage" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "isinsTab": {
+      "label": "lblWatch",
+      "type": "panel",
+      "items": {
+        "test": {
+          "newLine": true,
           "type": "text",
-          "label": "lblUsername",
+          "label": "test",
           "sm": 12,
           "md": 4
         },
-        "password": {
-          "type": "password",
-          "label": "lblPassword",
+        "_isinsTable": {
+          "newLine": true,
+          "type": "table",
           "sm": 12,
-          "md": 4
-        },
-        "synctime": {
-          "type": "cron",
-          "simple": true,
-          "label": "lblSynctime",
-          "sm": 12,
-          "md": 4
-        }
-      }
-    },
-    "_divider1": {
-      "type": "divider"
-    },
-    "checkboxGrid": {
-      "type": "panel",
-      "items": {
-        "_fields1": {
-          "type": "panel",
-          "sm": 12,
-          "md": 3,
-          "items": {
-            "isin": { "type": "checkbox", "label": "lblIsin" },
-            "symbol": { "type": "checkbox", "label": "lblSymbol" },
-            "name": { "type": "checkbox", "label": "lblName" },
-            "currency": { "type": "checkbox", "label": "lblCurrency" },
-            "country": { "type": "checkbox", "label": "lblCountry" }
-          }
-        },
-        "_fields2": {
-          "type": "panel",
-          "sm": 12,
-          "md": 3,
-          "items": {
-            "last": { "type": "checkbox", "label": "lblLast" },
-            "low": { "type": "checkbox", "label": "lblLow" },
-            "high": { "type": "checkbox", "label": "lblHigh" },
-            "prevDay": { "type": "checkbox", "label": "lblPrevDay" },
-            "performance": { "type": "checkbox", "label": "lblPerformance" }
-          }
-        },
-        "_fields3": {
-          "type": "panel",
-          "sm": 12,
-          "md": 3,
-          "items": {
-            "w52High": { "type": "checkbox", "label": "lblW52High" },
-            "w52HighDate": { "type": "checkbox", "label": "lblW52HighDate" },
-            "w52low": { "type": "checkbox", "label": "lblW52low" },
-            "w52LowDate": { "type": "checkbox", "label": "lblW52LowDate" },
-            "w52Close": { "type": "checkbox", "label": "lblW52Close" }
-          }
-        }
-      }
-    },
-    "_divider2": {
-      "type": "divider"
-    },
-    "_calculation": {
-      "type": "panel",
-      "items": {
-        "regression": {
-          "type": "checkbox",
-          "label": "lblRegression",
-          "sm": 12,
-          "md": 4
-        },
-        "average": {
-          "type": "checkbox",
-          "label": "lblAverage",
-          "sm": 12,
-          "md": 4
-        },
-        "limitLow": {
-          "type": "checkbox",
-          "label": "lblLimitLow",
-          "sm": 12,
-          "md": 4
-        },
-        "limitHigh": {
-          "type": "checkbox",
-          "label": "lblLimitHigh",
-          "sm": 12,
-          "md": 4
+          "md": 4,
+          "items": [
+              {
+                  "type": "text",
+                  "attr": "isin",
+                  "title": "lblIsin"
+              },
+              {
+                  "type": "text",
+                  "attr": "name",
+                  "title": "lblName"
+              },
+              {
+                  "type": "number",
+                  "min": 0,
+                  "default": 0,
+                  "attr": "limitHigh",
+                  "title": "lblLimitHigh"
+              },
+              {
+                  "type": "number",
+                  "min": 0,
+                  "default": 0,
+                  "attr": "limitLow",
+                  "title": "lblLimitLow"
+              }
+            ]
         }
       }
     }

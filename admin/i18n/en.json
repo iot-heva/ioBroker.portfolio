@@ -1,8 +1,11 @@
 {
 	"portfolio adapter settings": "Adapter settings",
+	"lblGeneral": "General",
+	"lblWatch": "Watch",
 	"lblUsername": "Username",
 	"lblPassword": "Password",
 	"lblSynctime": "Synchronization time",
+	"lblFields": "Fields",
 	"lblIsin": "ISIN",
 	"lblSymbol": "Symbol",
 	"lblName": "Name",
@@ -15,11 +18,13 @@
 	"lblPerformance": "Perf. curr. year",
 	"lblW52High": "52 wk high",
 	"lblW52HighDate": "52 wk high date",
-	"lblW52low": "52 wk low",
+	"lblW52Low": "52 wk low",
 	"lblW52LowDate": "52 wk low date",
 	"lblW52Close": "52 wk close",
-	"lblRegression": "Linear regression",
-	"lblAverage": "Moving average",
+	"lblLimit": "Limits",
 	"lblLimitLow": "Lower limit",
-	"lblLimitHigh": "Upper limit"
+	"lblLimitHigh": "Upper limit",
+	"lblCalculation": "Calculation",
+	"lblRegression": "Linear regression",
+	"lblAverage": "Moving average"
 }

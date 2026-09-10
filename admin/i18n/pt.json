@@ -1,8 +1,11 @@
 {
 	"portfolio adapter settings": "Configurações do adaptador",
+	"lblGeneral": "Geral",
+	"lblWatch": "Observar",
 	"lblUsername": "Nome de usuário",
 	"lblPassword": "Senha",
 	"lblSynctime": "Tempo de sincronização",
+	"lblFields": "Campos",
 	"lblIsin": "ISIN",
 	"lblSymbol": "Símbolo",
 	"lblName": "Nome",
@@ -15,11 +18,13 @@
 	"lblPerformance": "Desemp. ano atual",
 	"lblW52High": "Máx. 52 sem.",
 	"lblW52HighDate": "Data máx. 52 sem.",
-	"lblW52low": "Mín. 52 sem.",
+	"lblW52Low": "Mín. 52 sem.",
 	"lblW52LowDate": "Data mín. 52 sem.",
 	"lblW52Close": "Fechamento 52 sem.",
-	"lblRegression": "Regressão linear",
-	"lblAverage": "Média móvel",
+	"lblLimit": "Limites",
 	"lblLimitLow": "Limite inferior",
-	"lblLimitHigh": "Limite superior"
+	"lblLimitHigh": "Limite superior",
+	"lblCalculation": "Cálculo",
+	"lblRegression": "Regressão linear",
+	"lblAverage": "Média móvel"
 }
