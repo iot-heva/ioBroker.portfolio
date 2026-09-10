@@ -27,6 +27,14 @@
               "label": "lblSynctime",
               "sm": 12,
               "md": 4
+            },
+            "historyInstance": {
+              "type": "instance",
+              "adapter": "_dataSources",
+              "adapters": ["history", "influxdb", "sql"],
+              "label": "lblHistoryInstance",
+              "sm": 12,
+              "md": 4
             }
           }
         },
@@ -41,7 +49,6 @@
         },
         "_fieldsGrid": {
           "type": "panel",
-          "label": "lblFields",
           "items": {
             "_fields1": {
               "type": "panel",
@@ -116,13 +123,6 @@
       "label": "lblWatch",
       "type": "panel",
       "items": {
-        "test": {
-          "newLine": true,
-          "type": "text",
-          "label": "test",
-          "sm": 12,
-          "md": 4
-        },
         "_isinsTable": {
           "newLine": true,
           "type": "table",
@@ -132,26 +132,30 @@
               {
                   "type": "text",
                   "attr": "isin",
-                  "title": "lblIsin"
+                  "title": "lblIsin",
+                  "width": "15%"
               },
               {
                   "type": "text",
                   "attr": "name",
-                  "title": "lblName"
+                  "title": "lblName",
+                  "width": "45%"
               },
               {
                   "type": "number",
                   "min": 0,
                   "default": 0,
                   "attr": "limitHigh",
-                  "title": "lblLimitHigh"
+                  "title": "lblLimitHigh",
+                  "width": "20%"
               },
               {
                   "type": "number",
                   "min": 0,
                   "default": 0,
                   "attr": "limitLow",
-                  "title": "lblLimitLow"
+                  "title": "lblLimitLow",
+                  "width": "20%"
               }
             ]
         }
