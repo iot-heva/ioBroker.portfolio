@@ -81,7 +81,10 @@
 		]
 	},
 	"native": {
-		"_isinsTable": ["isin", "name", "limitHigh", "limitLow"],
+		"isin": [],
+		"name": [],
+		"limitHigh": [],
+		"limitLow": [],
 		"option1": true,
 		"option2": "42"
 	},
