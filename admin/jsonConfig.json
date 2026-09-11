@@ -13,20 +13,20 @@
               "type": "text",
               "label": "lblUsername",
               "sm": 6,
-              "md": 3
+              "md": 4
             },
             "password": {
               "type": "password",
               "label": "lblPassword",
               "sm": 6,
-              "md": 3
+              "md": 4
             },
             "syncTime": {
               "type": "cron",
               "simple": true,
               "label": "lblSyncTime",
               "sm": 6,
-              "md": 3
+              "md": 4
             }
           }
         },
@@ -92,7 +92,7 @@
               "adapter": "_dataSources",
               "label": "lblHistoryInstance",
               "sm": 6,
-              "md": 3
+              "md": 4
             },
             "_calculation": {
               "type": "panel",
@@ -181,8 +181,6 @@
                   "default": 0,
                   "attr": "limitHigh",
                   "title": "lblLimitHigh",
-                  "disabled": "!data.limitHighEnabled",
-                  "hidden": "!data.limitHighEnabled",
                   "sort": true,
                   "width": "10%"
               },
@@ -192,8 +190,6 @@
                   "default": 0,
                   "attr": "limitLow",
                   "title": "lblLimitLow",
-                  "disabled": "!data.limitLowEnabled",
-                  "hidden": "!data.limitLowEnabled",
                   "sort": true,
                   "width": "10%"
               },
@@ -203,8 +199,6 @@
                   "default": 0,
                   "attr": "regressionHigh",
                   "title": "lblRegressionHigh",
-                  "disabled": "!data.regressionHighEnabled",
-                  "hidden": "!data.regressionHighEnabled",
                   "sort": true,
                   "width": "10%"
               },
@@ -214,8 +208,6 @@
                   "default": 0,
                   "attr": "regressionLow",
                   "title": "lblRegressionLow",
-                  "disabled": "!data.regressionLowEnabled",
-                  "hidden": "!data.regressionLowEnabled",
                   "sort": true,
                   "width": "10%"
               },
@@ -225,8 +217,6 @@
                   "default": 0,
                   "attr": "averageHigh",
                   "title": "lblAverageHigh",
-                  "disabled": "!data.averageHighEnabled",
-                  "hidden": "!data.averageHighEnabled",
                   "sort": true,
                   "width": "10%"
               },
@@ -236,8 +226,6 @@
                   "default": 0,
                   "attr": "averageLow",
                   "title": "lblAverageLow",
-                  "disabled": "!data.averageLowEnabled",
-                  "hidden": "!data.averageLowEnabled",
                   "sort": true,
                   "width": "10%"
               }
