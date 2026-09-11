@@ -1,12 +1,10 @@
 {
 	"portfolio adapter settings": "Adaptereinstellungen",
 	"lblGeneral": "Allgemein",
-	"lblWatch": "Beobachten",
-	"lblComment": "Kommentar",
 	"lblUsername": "Benutzername",
 	"lblPassword": "Passwort",
 	"lblSyncTime": "Synchronisationszeit",
-	"lblHistoryInstance": "Historie Instanz",
+
 	"lblFields": "Abfragefelder aktivieren",
 	"lblIsin": "ISIN",
 	"lblSymbol": "Symbol",
@@ -23,10 +21,28 @@
 	"lblW52Low": "52 W. Tief",
 	"lblW52LowDate": "Datum 52 W. Tief",
 	"lblW52Close": "52 W. Schluss",
-	"lblLimit": "Grenzen aktivieren",
-	"lblLimitLow": "Untere Grenze",
-	"lblLimitHigh": "Obere Grenze",
+
+	"lblHistoryInstance": "Historie Instanz",
 	"lblCalculation": "Berechnung aktivieren",
-	"lblRegression": "Lineare Regression",
-	"lblAverage": "Gleitender Durchschnitt"
+	"lblCalculateRegressionEnabled": "Lineare Regression",
+	"lblCalculateAverageEnabled": "Gleitender Durchschnitt",
+
+	"lblWatch": "Beobachten",
+	"lblNotificationInstance": "Benachrichtigungs Instanz",
+	"lblLimitAlert": "Kurs Schwellwerte",
+	"lblLimitHighEnabled": "Kurs Hoch",
+	"lblLimitLowEnabled": "Kurs Tief",
+	"lblRegressionAlert": "Regression Schwellwerte",
+	"lblRegressionHighEnabled": "Regression Hoch",
+	"lblRegressionLowEnabled": "Regression Tief",
+	"lblAverageAlert": "Durchschnitt Schwellwerte",
+	"lblAverageHighEnabled": "Durchschnitt Hoch",
+	"lblAverageLowEnabled": "Durchschnitt Tief",
+
+	"lblLimitHigh": "Kurs +",
+	"lblLimitLow": "Kurs -",
+	"lblRegressionHigh": "Regression +",
+	"lblRegressionLow": "Regression -",
+	"lblAverageHigh": "Durchschnitt +",
+	"lblAverageLow": "Durchschnitt -"
 }

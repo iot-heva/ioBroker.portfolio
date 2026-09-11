@@ -27,13 +27,6 @@
               "label": "lblSyncTime",
               "sm": 6,
               "md": 3
-            },
-            "historyInstance": {
-              "type": "instance",
-              "adapter": "_dataSources",
-              "label": "lblHistoryInstance",
-              "sm": 6,
-              "md": 3
             }
           }
         },
@@ -94,15 +87,12 @@
         "_additionalGrid": {
           "type": "panel",
           "items": {
-            "_limit": {
-              "type": "panel",
+            "historyInstance": {
+              "type": "instance",
+              "adapter": "_dataSources",
+              "label": "lblHistoryInstance",
               "sm": 6,
-              "md": 4,
-              "items": {
-                "_limitText": { "type": "staticText", "text": "lblLimit" },
-                "limitHighEnabled": { "type": "checkbox", "label": "lblLimitHigh" },
-                "limitLowEnabled": { "type": "checkbox", "label": "lblLimitLow" }
-              }
+              "md": 3
             },
             "_calculation": {
               "type": "panel",
@@ -110,18 +100,65 @@
               "md": 4,
               "items": {
                 "_calculationText": { "type": "staticText", "text": "lblCalculation" },
-                "regressionEnabled": { "type": "checkbox", "label": "lblRegression" },
-                "averageEnabled": { "type": "checkbox", "label": "lblAverage" }
+                "calculateRegressionEnabled": { "type": "checkbox", "label": "lblCalculateRegressionEnabled" },
+                "calculateAverageEnabled": { "type": "checkbox", "label": "lblCalculateAverageEnabled" }
               }
             }
           }
         }
       }
     },
-    "_isinsTab": {
+    "_watchTab": {
       "label": "lblWatch",
       "type": "panel",
       "items": {
+        "notificationInstance": {
+          "type": "instance",
+          "label": "lblNotificationInstance",
+          "adapter": "",
+          "adapters": [
+            "telegram",
+            "pushover",
+            "pushsafer",
+            "email",
+            "whatsapp-cmb",
+            "signal-cmb",
+            "matrix",
+            "discord"
+          ],
+          "sm": 6,
+          "md": 3
+        },
+        "_limitAlert": {
+          "type": "panel",
+          "sm": 6,
+          "md": 3,
+          "items": {
+            "_limitAlertText": { "type": "staticText", "text": "lblLimitAlert" },
+            "limitHighEnabled": { "type": "checkbox", "label": "lblLimitHighEnabled" },
+            "limitLowEnabled": { "type": "checkbox", "label": "lblLimitLowEnabled" }
+          }
+        },
+        "_regressionAlert": {
+          "type": "panel",
+          "sm": 6,
+          "md": 3,
+          "items": {
+            "_regressionAlertText": { "type": "staticText", "text": "lblRegressionAlert" },
+            "regressionHighEnabled": { "type": "checkbox", "label": "lblRegressionHighEnabled" },
+            "regressionLowEnabled": { "type": "checkbox", "label": "lblRegressionLowEnabled" }
+          }
+        },
+        "_averageAlert": {
+          "type": "panel",
+          "sm": 6,
+          "md": 3,
+          "items": {
+            "_averageAlertText": { "type": "staticText", "text": "lblAverageAlert" },
+            "averageHighEnabled": { "type": "checkbox", "label": "lblAverageHighEnabled" },
+            "averageLowEnabled": { "type": "checkbox", "label": "lblAverageLowEnabled" }
+          }
+        },
         "isinsTable": {
           "newLine": true,
           "type": "table",
@@ -139,20 +176,13 @@
                   "width": "15%"
               },
               {
-                  "type": "text",
-                  "attr": "comment",
-                  "title": "lblComment",
-                  "sort": true,
-                  "width": "25%"
-              },
-              {
                   "type": "number",
                   "min": 0,
                   "default": 0,
                   "attr": "limitHigh",
                   "title": "lblLimitHigh",
-                  "disabled": "data.limitHighEnabled === false",
-                  "hidden": "data.limitHighEnabled === false",
+                  "disabled": "!data.limitHighEnabled",
+                  "hidden": "!data.limitHighEnabled",
                   "sort": true,
                   "width": "10%"
               },
@@ -162,8 +192,8 @@
                   "default": 0,
                   "attr": "limitLow",
                   "title": "lblLimitLow",
-                  "disabled": "data.limitLowEnabled === false",
-                  "hidden": "data.limitLowEnabled === false",
+                  "disabled": "!data.limitLowEnabled",
+                  "hidden": "!data.limitLowEnabled",
                   "sort": true,
                   "width": "10%"
               },
@@ -171,10 +201,10 @@
                   "type": "number",
                   "min": 0,
                   "default": 0,
-                  "attr": "regression",
-                  "title": "lblRegression",
-                  "disabled": "data.regressionEnabled === false",
-                  "hidden": "data.regressionEnabled === false",
+                  "attr": "regressionHigh",
+                  "title": "lblRegressionHigh",
+                  "disabled": "!data.regressionHighEnabled",
+                  "hidden": "!data.regressionHighEnabled",
                   "sort": true,
                   "width": "10%"
               },
@@ -182,10 +212,32 @@
                   "type": "number",
                   "min": 0,
                   "default": 0,
-                  "attr": "average",
-                  "title": "lblAverage",
-                  "disabled": "data.averageEnabled === false",
-                  "hidden": "data.averageEnabled === false",
+                  "attr": "regressionLow",
+                  "title": "lblRegressionLow",
+                  "disabled": "!data.regressionLowEnabled",
+                  "hidden": "!data.regressionLowEnabled",
+                  "sort": true,
+                  "width": "10%"
+              },
+              {
+                  "type": "number",
+                  "min": 0,
+                  "default": 0,
+                  "attr": "averageHigh",
+                  "title": "lblAverageHigh",
+                  "disabled": "!data.averageHighEnabled",
+                  "hidden": "!data.averageHighEnabled",
+                  "sort": true,
+                  "width": "10%"
+              },
+              {
+                  "type": "number",
+                  "min": 0,
+                  "default": 0,
+                  "attr": "averageLow",
+                  "title": "lblAverageLow",
+                  "disabled": "!data.averageLowEnabled",
+                  "hidden": "!data.averageLowEnabled",
                   "sort": true,
                   "width": "10%"
               }

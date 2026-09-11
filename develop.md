@@ -1,3 +1,34 @@
+### Links
+backitUp https://github.com/simatec/ioBroker.backitup/tree/master/
+
+ioBroker JSON Config
+https://github.com/ioBroker/json-config
+
+
+https://github.com/ioBroker/ioBroker.admin/blob/a19915fdb2daa9c96ad189d16d824be06962123b/src-rx/src/components/JsonConfigComponent/SCHEMA.md
+
+
+https://share.google/aimode/ZuDezSse64sT84gTL
+{
+    "notificationService": {
+        "type": "instance",
+        "label": "Push-Notification-Dienst",
+        "adapters": [
+            "telegram",
+            "pushover",
+            "pushsafer",
+            "email",
+            "whatsapp-cmb",
+            "signal-cmb",
+            "matrix",
+            "discord"
+        ],
+        "allowEmpty": true
+    }
+}
+
+
+
 ### Best Practices
 We've collected some [best practices](https://github.com/ioBroker/ioBroker.repositories#development-and-coding-best-practices) regarding ioBroker development and coding in general. If you're new to ioBroker or Node.js, you should
 check them out. If you're already experienced, you should also take a look at them - you might learn something new :)
