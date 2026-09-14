@@ -1,6 +1,6 @@
 {
   "name": "iobroker.portfolio",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "description": "Regular stock price checks, fundamental analysis, price alerts, etc.",
   "author": {
     "name": "heva13",

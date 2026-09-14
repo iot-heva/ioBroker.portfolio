@@ -95,7 +95,7 @@
                 "historyInstance": {
                   "type": "instance",
                   "adapter": "_dataSources",
-                  "label": "lblHistoryInstance",
+                  "label": "lblHistoryInstance"
                 },
                 "historyDays": {
                   "type": "number",
