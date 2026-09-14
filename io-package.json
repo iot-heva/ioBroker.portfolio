@@ -112,7 +112,7 @@
 		"averageLowEnabled": false,
 		"isinsTable": []
 	},
-	"protectedNative": ["password"],
+	"encryptedNative": ["password"],
 	"objects": [],
 	"instanceObjects": []
 }

@@ -1,6 +1,7 @@
 "use strict";
 
 const utils = require("@iobroker/adapter-core");
+const schedule = require("@iobroker/node-schedule-shim");
 
 /*
 const CognitoUserPool = require("amazon-cognito-identity-js");
@@ -19,14 +20,35 @@ class Portfolio extends utils.Adapter {
 		});
 		this.on("ready", this.onReady.bind(this));
 		this.on("unload", this.onUnload.bind(this));
+		this.syncJob = null;
 	}
 
 	/**
-	 * @param enabled - Indicates whether the state should be enabled or not
-	 * @param isin - The ISIN identifier for the state
-	 * @param state - The state object containing relevant information
-	 * @param type - The data type of the state (e.g., "number", "string")
-	 * @param role - The role of the state (e.g., "value", "indicator")
+	 * Executes the synchronization job for the adapter.
+	 */
+	async syncJobExecution() {
+		/**
+		 * login and create session
+		 * iterate over isins and update their states accordingly
+		 */
+		this.log.info("Executing synchronization job");
+
+		const isins = this.config.isinsTable;
+
+		if (Array.isArray(isins) && isins.length > 0) {
+			for (const row of isins) {
+				// Access specific column values using the 'id' defined in jsonConfig
+				this.log.info(`Processing row: ${row.isin}`);
+			}
+		}
+	}
+
+	/**
+	 * @param {boolean} enabled - Indicates whether the state should be enabled or not
+	 * @param {string} isin - The ISIN identifier for the state
+	 * @param {string} state - The state object containing relevant information
+	 * @param {ioBroker.CommonType} type - The data type of the state (e.g., "number", "string")
+	 * @param {string} role - The role of the state (e.g., "value", "indicator")
 	 */
 	async updateState(enabled, isin, state, type, role) {
 		if (enabled) {
@@ -50,6 +72,26 @@ class Portfolio extends utils.Adapter {
 	 * Is called when databases are connected and adapter received configuration.
 	 */
 	async onReady() {
+		//Basic checks
+		if (!this.config.username || !this.config.password) {
+			this.log.error("No credentials found please enter your credentials in the instance settings");
+			return;
+		}
+
+		if (!this.config.syncTime) {
+			this.log.error("No sync time found please enter the sync time in the instance settings");
+			return;
+		}
+
+		try {
+			this.syncJob = schedule.scheduleJob(this.config.syncTime, async () => {
+				await this.syncJobExecution();
+			});
+		} catch (error) {
+			this.log.error(`Error creating cron-job: ${error.message}`);
+			return;
+		}
+
 		// Initialize states based on selected configuration
 		const isins = this.config.isinsTable;
 
@@ -91,11 +133,9 @@ class Portfolio extends utils.Adapter {
 	 */
 	onUnload(callback) {
 		try {
-			// Here you must clear all timeouts or intervals that may still be active
-			// clearTimeout(timeout1);
-			// clearTimeout(timeout2);
-			// ...
-			// clearInterval(interval1);
+			if (this.syncJob) {
+				schedule.cancelJob(this.syncJob);
+			}
 
 			callback();
 		} catch (error) {
