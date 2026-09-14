@@ -22,6 +22,8 @@
 	"lblW52Close": "Zamknięcie 52 tyg.",
 	"lblHistoryInstance": "Instancja historii",
 	"lblCalculation": "Włącz obliczenia",
+	"lblHistoryDays": "Okres",
+	"lblHistoryDaysUnit": "dni",
 	"lblCalculateRegressionEnabled": "Regresja liniowa",
 	"lblCalculateAverageEnabled": "Średnia krocząca",
 	"lblWatch": "Obserwuj",

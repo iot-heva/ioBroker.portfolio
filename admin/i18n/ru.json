@@ -22,6 +22,8 @@
 	"lblW52Close": "Закрытие 52 нед.",
 	"lblHistoryInstance": "Экземпляр истории",
 	"lblCalculation": "Включить расчёт",
+	"lblHistoryDays": "Период",
+	"lblHistoryDaysUnit": "Дней",
 	"lblCalculateRegressionEnabled": "Линейная регрессия",
 	"lblCalculateAverageEnabled": "Скользящее среднее",
 	"lblWatch": "Наблюдение",

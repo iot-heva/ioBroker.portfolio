@@ -22,6 +22,8 @@
 	"lblW52Close": "52周收盘价",
 	"lblHistoryInstance": "历史记录实例",
 	"lblCalculation": "启用计算",
+	"lblHistoryDays": "时间跨度",
+	"lblHistoryDaysUnit": "天",
 	"lblCalculateRegressionEnabled": "线性回归",
 	"lblCalculateAverageEnabled": "移动平均",
 	"lblWatch": "观察",

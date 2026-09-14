@@ -22,6 +22,8 @@
 	"lblW52Close": "52 wk slot",
 	"lblHistoryInstance": "History-instantie",
 	"lblCalculation": "Berekening inschakelen",
+	"lblHistoryDays": "Periode",
+	"lblHistoryDaysUnit": "dagen",
 	"lblCalculateRegressionEnabled": "Lineaire regressie",
 	"lblCalculateAverageEnabled": "Voortschrijdend gemiddelde",
 	"lblWatch": "Bewaken",

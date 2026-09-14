@@ -24,6 +24,8 @@
 
 	"lblHistoryInstance": "Historie Instanz",
 	"lblCalculation": "Berechnung aktivieren",
+	"lblHistoryDays": "Zeitspanne",
+	"lblHistoryDaysUnit": "Tage",
 	"lblCalculateRegressionEnabled": "Lineare Regression",
 	"lblCalculateAverageEnabled": "Gleitender Durchschnitt",
 

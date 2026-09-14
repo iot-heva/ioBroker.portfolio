@@ -22,6 +22,8 @@
 	"lblW52Close": "52 wk close",
 	"lblHistoryInstance": "History instance",
 	"lblCalculation": "Enable calculation",
+	"lblHistoryDays": "Time span",
+	"lblHistoryDaysUnit": "days",
 	"lblCalculateRegressionEnabled": "Linear regression",
 	"lblCalculateAverageEnabled": "Moving average",
 	"lblWatch": "Watch",

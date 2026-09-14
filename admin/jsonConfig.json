@@ -87,12 +87,26 @@
         "_additionalGrid": {
           "type": "panel",
           "items": {
-            "historyInstance": {
-              "type": "instance",
-              "adapter": "_dataSources",
-              "label": "lblHistoryInstance",
+            "_history": {
+              "type": "panel",
               "sm": 6,
-              "md": 3
+              "md": 4,
+              "items": {
+                "historyInstance": {
+                  "type": "instance",
+                  "adapter": "_dataSources",
+                  "label": "lblHistoryInstance",
+                  "sm": 6,
+                  "md": 3
+                },
+                "historyDays": {
+                  "type": "number",
+                  "label": "lblHistoryDays",
+                  "default": 30,
+                  "min": 1,
+                  "step": 1,
+                  "unit": "lblHistoryDaysUnit"}
+              }
             },
             "_calculation": {
               "type": "panel",

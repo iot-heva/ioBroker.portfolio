@@ -8,25 +8,7 @@ https://github.com/ioBroker/json-config
 https://github.com/ioBroker/ioBroker.admin/blob/a19915fdb2daa9c96ad189d16d824be06962123b/src-rx/src/components/JsonConfigComponent/SCHEMA.md
 
 
-https://share.google/aimode/ZuDezSse64sT84gTL
-{
-    "notificationService": {
-        "type": "instance",
-        "label": "Push-Notification-Dienst",
-        "adapters": [
-            "telegram",
-            "pushover",
-            "pushsafer",
-            "email",
-            "whatsapp-cmb",
-            "signal-cmb",
-            "matrix",
-            "discord"
-        ],
-        "allowEmpty": true
-    }
-}
-
+https://github.com/TA2k/ioBroker.mercedesme/blob/master/main.js
 
 
 ### Best Practices

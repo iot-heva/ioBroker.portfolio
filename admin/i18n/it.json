@@ -22,6 +22,8 @@
 	"lblW52Close": "Chiusura 52 sett.",
 	"lblHistoryInstance": "Istanza cronologia",
 	"lblCalculation": "Abilita calcolo",
+	"lblHistoryDays": "Periodo",
+	"lblHistoryDaysUnit": "giorni",
 	"lblCalculateRegressionEnabled": "Regressione lineare",
 	"lblCalculateAverageEnabled": "Media mobile",
 	"lblWatch": "Osserva",

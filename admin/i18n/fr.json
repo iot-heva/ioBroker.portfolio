@@ -22,6 +22,8 @@
 	"lblW52Close": "Clôture 52 sem.",
 	"lblHistoryInstance": "Instance d'historique",
 	"lblCalculation": "Activer le calcul",
+	"lblHistoryDays": "Période",
+	"lblHistoryDaysUnit": "jours",
 	"lblCalculateRegressionEnabled": "Régression linéaire",
 	"lblCalculateAverageEnabled": "Moyenne mobile",
 	"lblWatch": "Surveiller",
