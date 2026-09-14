@@ -96,8 +96,6 @@
                   "type": "instance",
                   "adapter": "_dataSources",
                   "label": "lblHistoryInstance",
-                  "sm": 6,
-                  "md": 3
                 },
                 "historyDays": {
                   "type": "number",
