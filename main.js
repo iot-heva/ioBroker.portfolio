@@ -1,15 +1,12 @@
 "use strict";
 
-/*
- * Created with @iobroker/create-adapter v3.1.5
- */
-
-// The adapter-core module gives you access to the core ioBroker functions
-// you need to create an adapter
 const utils = require("@iobroker/adapter-core");
 
-// Load your modules here, e.g.:
-// const fs = require("fs");
+/*
+const CognitoUserPool = require("amazon-cognito-identity-js");
+const CognitoUser = require("amazon-cognito-identity-js");
+const AuthenticationDetails = require("amazon-cognito-identity-js");
+*/
 
 class Portfolio extends utils.Adapter {
 	/**
@@ -21,72 +18,70 @@ class Portfolio extends utils.Adapter {
 			name: "portfolio",
 		});
 		this.on("ready", this.onReady.bind(this));
-		this.on("stateChange", this.onStateChange.bind(this));
-		// this.on("objectChange", this.onObjectChange.bind(this));
-		// this.on("message", this.onMessage.bind(this));
 		this.on("unload", this.onUnload.bind(this));
+	}
+
+	/**
+	 * @param enabled - Indicates whether the state should be enabled or not
+	 * @param isin - The ISIN identifier for the state
+	 * @param state - The state object containing relevant information
+	 * @param type - The data type of the state (e.g., "number", "string")
+	 * @param role - The role of the state (e.g., "value", "indicator")
+	 */
+	async updateState(enabled, isin, state, type, role) {
+		if (enabled) {
+			await this.setObjectNotExistsAsync(`${isin}.${state}`, {
+				type: "state",
+				common: {
+					name: state,
+					type: type,
+					role: role,
+					read: true,
+					write: true,
+				},
+				native: {},
+			});
+		} else {
+			await this.delObjectAsync(`${isin}.${state}`);
+		}
 	}
 
 	/**
 	 * Is called when databases are connected and adapter received configuration.
 	 */
 	async onReady() {
-		// Initialize your adapter here
+		// Initialize states based on selected configuration
+		const isins = this.config.isinsTable;
 
-		// The adapters config (in the instance object everything under the attribute "native") is accessible via
-		// this.config:
-		this.log.debug("config option1: ${this.config.option1}");
-		this.log.debug("config option2: ${this.config.option2}");
+		if (Array.isArray(isins) && isins.length > 0) {
+			for (const row of isins) {
+				// Access specific column values using the 'id' defined in jsonConfig
+				this.log.info(`Processing row: ${row.isin}`);
 
-		/*
-		For every state in the system there has to be also an object of type state
-		Here a simple template for a boolean variable named "testVariable"
-		Because every adapter instance uses its own unique namespace variable names can't collide with other adapters variables
+				// The only required state: Last price of the current ISIN
+				await this.updateState(true, row.isin, "last", "number", "value");
 
-		IMPORTANT: State roles should be chosen carefully based on the state's purpose.
-		           Please refer to the state roles documentation for guidance:
-		           https://www.iobroker.net/#en/documentation/dev/stateroles.md
-		*/
-		await this.setObjectNotExistsAsync("testVariable", {
-			type: "state",
-			common: {
-				name: "testVariable",
-				type: "boolean",
-				role: "indicator",
-				read: true,
-				write: true,
-			},
-			native: {},
-		});
+				// Additional states for the current ISIN
+				await this.updateState(this.config.isinEnabled, row.isin, "isin", "string", "text");
+				await this.updateState(this.config.symbolEnabled, row.isin, "symbol", "string", "text");
+				await this.updateState(this.config.nameEnabled, row.isin, "name", "string", "text");
+				await this.updateState(this.config.currencyEnabled, row.isin, "currency", "string", "text");
+				await this.updateState(this.config.countryEnabled, row.isin, "country", "string", "text");
 
-		// In order to get state updates, you need to subscribe to them. The following line adds a subscription for our variable we have created above.
-		this.subscribeStates("testVariable");
+				await this.updateState(this.config.highEnabled, row.isin, "high", "number", "value");
+				await this.updateState(this.config.lowEnabled, row.isin, "low", "number", "value");
+				await this.updateState(this.config.prevDayEnabled, row.isin, "prevDay", "number", "value");
+				await this.updateState(this.config.performanceEnabled, row.isin, "performance", "number", "value");
 
-		// You can also add a subscription for multiple states. The following line watches all states starting with "lights."
-		// this.subscribeStates("lights.*");
-		// Or, if you really must, you can also watch all states. Don't do this if you don't need to. Otherwise this will cause a lot of unnecessary load on the system:
-		// this.subscribeStates("*");
-
-		/*
-			setState examples
-			you will notice that each setState will cause the stateChange event to fire (because of above subscribeStates cmd)
-		*/
-		// the variable testVariable is set to true as command (ack=false)
-		await this.setState("testVariable", true);
-
-		// same thing, but the value is flagged "ack"
-		// ack should be always set to true if the value is received from or acknowledged from the target system
-		await this.setState("testVariable", { val: true, ack: true });
-
-		// same thing, but the state is deleted after 30s (getState will return null afterwards)
-		await this.setState("testVariable", { val: true, ack: true, expire: 30 });
-
-		// examples for the checkPassword/checkGroup functions
-		const pwdResult = await this.checkPasswordAsync("admin", "iobroker");
-		this.log.info(`check user admin pw iobroker: ${pwdResult}`);
-
-		const groupResult = await this.checkGroupAsync("admin", "admin");
-		this.log.info(`check group user admin group admin: ${groupResult}`);
+				await this.updateState(this.config.w52CloseEnabled, row.isin, "w52Close", "number", "value");
+				await this.updateState(this.config.w52HighEnabled, row.isin, "w52High", "number", "value");
+				await this.updateState(this.config.w52HighDateEnabled, row.isin, "w52HighDate", "string", "date");
+				await this.updateState(this.config.w52LowEnabled, row.isin, "w52Low", "number", "value");
+				await this.updateState(this.config.w52LowDateEnabled, row.isin, "w52LowDate", "string", "date");
+			}
+		} else {
+			this.log.info("The watch list table is empty.");
+		}
 	}
 
 	/**
@@ -108,64 +103,6 @@ class Portfolio extends utils.Adapter {
 			callback();
 		}
 	}
-
-	// If you need to react to object changes, uncomment the following block and the corresponding line in the constructor.
-	// You also need to subscribe to the objects with `this.subscribeObjects`, similar to `this.subscribeStates`.
-	// /**
-	//  * Is called if a subscribed object changes
-	//  * @param {string} id
-	//  * @param {ioBroker.Object | null | undefined} obj
-	//  */
-	// onObjectChange(id, obj) {
-	// 	if (obj) {
-	// 		// The object was changed
-	// 		this.log.info(`object ${id} changed: ${JSON.stringify(obj)}`);
-	// 	} else {
-	// 		// The object was deleted
-	// 		this.log.info(`object ${id} deleted`);
-	// 	}
-	// }
-
-	/**
-	 * Is called if a subscribed state changes
-	 *
-	 * @param {string} id - State ID
-	 * @param {ioBroker.State | null | undefined} state - State object
-	 */
-	onStateChange(id, state) {
-		if (state) {
-			// The state was changed
-			this.log.info(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
-
-			if (state.ack === false) {
-				// This is a command from the user (e.g., from the UI or other adapter)
-				// and should be processed by the adapter
-				this.log.info(`User command received for ${id}: ${state.val}`);
-
-				// TODO: Add your control logic here
-			}
-		} else {
-			// The object was deleted or the state value has expired
-			this.log.info(`state ${id} deleted`);
-		}
-	}
-	// If you need to accept messages in your adapter, uncomment the following block and the corresponding line in the constructor.
-	// /**
-	//  * Some message was sent to this instance over message box. Used by email, pushover, text2speech, ...
-	//  * Using this method requires "common.messagebox" property to be set to true in io-package.json
-	//  * @param {ioBroker.Message} obj
-	//  */
-	// onMessage(obj) {
-	// 	if (typeof obj === "object" && obj.message) {
-	// 		if (obj.command === "send") {
-	// 			// e.g. send email or pushover or whatever
-	// 			this.log.info("send command");
-
-	// 			// Send response in callback if required
-	// 			if (obj.callback) this.sendTo(obj.from, obj.command, "Message received", obj.callback);
-	// 		}
-	// 	}
-	// }
 }
 
 if (require.main !== module) {
