@@ -48,11 +48,24 @@ class Portfolio extends utils.Adapter {
 	 * @param {string} state - The state object containing relevant information
 	 */
 	async enableHistory(isin, state) {
+		this.log.info(`${isin}.${state}: enableHistory`);
 		const obj = await this.getObjectAsync(`${isin}.${state}`);
+
+		if (obj) {
+			this.log.info(`${isin}.${state}: got object`);
+			if (obj.common) {
+				this.log.info(`${isin}.${state}: got common object`);
+				if (obj.common.custom) {
+					this.log.info(`${isin}.${state}: got common.custom object`);
+					if (obj.common.custom[this.config.historyInstance]) {
+						this.log.info(`${isin}.${state}: got common.custom.${this.config.historyInstance} object`);
+					}
+				}
+			}
+		}
 
 		if (obj && obj.common && obj.common.custom) {
 			if (!obj.common.custom[this.config.historyInstance]) {
-				this.log.info(`Enabling history logging (${this.config.historyInstance}) for ${isin}.${state}`);
 				await this.extendObject(`${isin}.${state}`, {
 					common: {
 						custom: {
@@ -117,8 +130,6 @@ class Portfolio extends utils.Adapter {
 			return;
 		}
 
-		this.log.info(`Selected history instance: ${this.config.historyInstance}`);
-
 		// Initialize states based on selected configuration
 		const isins = this.config.isinsTable;
 
@@ -128,8 +139,6 @@ class Portfolio extends utils.Adapter {
 				await this.updateState(true, row.isin, "last", "number", "value");
 				if (this.config.historyInstance) {
 					await this.enableHistory(row.isin, "last");
-				} else {
-					this.log.info(`History is not enabled for ISIN: ${row.isin}`);
 				}
 
 				// Additional states for the current ISIN
