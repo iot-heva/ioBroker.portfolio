@@ -117,6 +117,8 @@ class Portfolio extends utils.Adapter {
 			return;
 		}
 
+		this.log.info(`Selected history instance: ${this.config.historyInstance}`);
+
 		// Initialize states based on selected configuration
 		const isins = this.config.isinsTable;
 
@@ -126,6 +128,8 @@ class Portfolio extends utils.Adapter {
 				await this.updateState(true, row.isin, "last", "number", "value");
 				if (this.config.historyInstance) {
 					await this.enableHistory(row.isin, "last");
+				} else {
+					this.log.info(`History is not enabled for ISIN: ${row.isin}`);
 				}
 
 				// Additional states for the current ISIN
@@ -145,6 +149,9 @@ class Portfolio extends utils.Adapter {
 				await this.updateState(this.config.w52HighDateEnabled, row.isin, "w52HighDate", "string", "date");
 				await this.updateState(this.config.w52LowEnabled, row.isin, "w52Low", "number", "value");
 				await this.updateState(this.config.w52LowDateEnabled, row.isin, "w52LowDate", "string", "date");
+
+				await this.updateState(this.config.calculateRegressionEnabled, row.isin, "average", "number", "value");
+				await this.updateState(this.config.calculateAverageEnabled, row.isin, "average", "number", "value");
 			}
 		} else {
 			this.log.info("The watch list table is empty.");
