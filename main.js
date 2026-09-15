@@ -44,6 +44,31 @@ class Portfolio extends utils.Adapter {
 	}
 
 	/**
+	 * @param {string} isin - The ISIN identifier for the state
+	 * @param {string} state - The state object containing relevant information
+	 */
+	async enableHistory(isin, state) {
+		const obj = await this.getObjectAsync(`${isin}.${state}`);
+
+		if (obj && obj.common && obj.common.custom) {
+			if (!obj.common.custom[this.config.historyInstance]) {
+				this.log.info(`Enabling history logging (${this.config.historyInstance}) for ${isin}.${state}`);
+				await this.extendObject(`${isin}.${state}`, {
+					common: {
+						custom: {
+							[`${this.config.historyInstance}`]: {
+								enabled: true,
+								changesOnly: true,
+								debounce: 0,
+							},
+						},
+					},
+				});
+			}
+		}
+	}
+
+	/**
 	 * @param {boolean} enabled - Indicates whether the state should be enabled or not
 	 * @param {string} isin - The ISIN identifier for the state
 	 * @param {string} state - The state object containing relevant information
@@ -97,11 +122,11 @@ class Portfolio extends utils.Adapter {
 
 		if (Array.isArray(isins) && isins.length > 0) {
 			for (const row of isins) {
-				// Access specific column values using the 'id' defined in jsonConfig
-				this.log.info(`Processing row: ${row.isin}`);
-
 				// The only required state: Last price of the current ISIN
 				await this.updateState(true, row.isin, "last", "number", "value");
+				if (this.config.historyInstance) {
+					await this.enableHistory(row.isin, "last");
+				}
 
 				// Additional states for the current ISIN
 				await this.updateState(this.config.isinEnabled, row.isin, "isin", "string", "text");
