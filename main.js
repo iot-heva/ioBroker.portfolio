@@ -1,7 +1,7 @@
 "use strict";
 
 const utils = require("@iobroker/adapter-core");
-const schedule = require("@iobroker/node-schedule-shim");
+const schedule = require("@iobroker/node-schedule");
 
 /*
 const CognitoUserPool = require("amazon-cognito-identity-js");
@@ -78,7 +78,7 @@ class Portfolio extends utils.Adapter {
 			return;
 		}
 
-		if (!this.config.syncTime) {
+		if (!this.config.syncTime || this.config.syncTime.trim() === "") {
 			this.log.error("No sync time found please enter the sync time in the instance settings");
 			return;
 		}
@@ -134,7 +134,7 @@ class Portfolio extends utils.Adapter {
 	onUnload(callback) {
 		try {
 			if (this.syncJob) {
-				schedule.cancelJob(this.syncJob);
+				this.syncJob.cancel();
 			}
 
 			callback();
