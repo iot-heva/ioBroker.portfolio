@@ -1,7 +1,7 @@
 "use strict";
 
 const utils = require("@iobroker/adapter-core");
-const schedule = require("@iobroker/node-schedule");
+const schedule = require("node-schedule");
 
 /*
 const CognitoUserPool = require("amazon-cognito-identity-js");
