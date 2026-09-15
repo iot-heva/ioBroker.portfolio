@@ -52,7 +52,6 @@ class Portfolio extends utils.Adapter {
 
 		if (obj && obj.common) {
 			if (!obj.common.custom || !obj.common.custom[this.config.historyInstance]) {
-				this.log.info(`Enabling history ${this.config.historyInstance} for ${isin}.${state}`);
 				await this.extendObject(`${isin}.${state}`, {
 					common: {
 						custom: {
@@ -147,11 +146,11 @@ class Portfolio extends utils.Adapter {
 				await this.updateState(this.config.w52LowEnabled, row.isin, "w52Low", "number", "value");
 				await this.updateState(this.config.w52LowDateEnabled, row.isin, "w52LowDate", "string", "date");
 
-				await this.updateState(this.config.calculateRegressionEnabled, row.isin, "average", "number", "value");
-				await this.updateState(this.config.calculateAverageEnabled, row.isin, "average", "number", "value");
+				await this.updateState(this.config.calcRegressionEnabled, row.isin, "regression", "number", "value");
+				await this.updateState(this.config.calcAverageEnabled, row.isin, "average", "number", "value");
 			}
 		} else {
-			this.log.info("The watch list table is empty.");
+			this.log.info("The watch list is empty.");
 		}
 	}
 

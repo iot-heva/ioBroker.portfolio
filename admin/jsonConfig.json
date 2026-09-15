@@ -112,8 +112,8 @@
               "md": 4,
               "items": {
                 "_calculationText": { "type": "staticText", "text": "lblCalculation" },
-                "calculateRegressionEnabled": { "type": "checkbox", "label": "lblCalculateRegressionEnabled" },
-                "calculateAverageEnabled": { "type": "checkbox", "label": "lblCalculateAverageEnabled" }
+                "calcRegressionEnabled": { "type": "checkbox", "label": "lblCalculateRegressionEnabled" },
+                "calcAverageEnabled": { "type": "checkbox", "label": "lblCalculateAverageEnabled" }
               }
             }
           }
