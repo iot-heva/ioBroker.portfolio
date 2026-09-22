@@ -1,0 +1,117 @@
+{
+	"common": {
+		"name": "portfolio",
+		"version": "1.0.0",
+		"news": {
+			"1.0.0": {
+				"de": "Erstveröffentlichung",
+				"en": "initial release",
+				"pt": "lançamento inicial",
+				"nl": "Eerste uitgave",
+				"fr": "Première version",
+				"it": "Versione iniziale",
+				"es": "Versión inicial",
+				"pl": "Pierwsze wydanie"
+			}
+		},
+		"titleLang": {
+			"de": "Portfolio",
+			"en": "Portfolio",
+			"pt": "Portfólio",
+			"nl": "Portefeuille",
+			"fr": "Portefeuille",
+			"it": "Portfolio",
+			"es": "Cartera",
+			"pl": "Teczka"
+		},
+		"desc": {
+			"en": "Regular stock price checks, fundamental analysis, price alerts, etc.",
+			"de": "Regelmäßige Aktienkursprüfungen, Fundamentalanalysen, Preisalarme usw.",
+			"pt": "Verificações regulares de preços de ações, análises fundamentais, alertas de preços, etc.",
+			"nl": "Regelmatige controles van de aandelenkoersen, fundamentele analyses, prijswaarschuwingen, enz.",
+			"fr": "Vérifications régulières du cours des actions, analyse fondamentale, alertes de prix, etc.",
+			"it": "Controlli regolari del prezzo delle azioni, analisi fondamentale, avvisi sui prezzi, ecc.",
+			"es": "Comprobaciones periódicas del precio de las acciones, análisis fundamentales, alertas de precios, etc.",
+			"pl": "Regularne kontrole cen akcji, analizy fundamentalne, alerty cenowe itp."
+		},
+		"authors": [
+			"heva13 <iot.heva@outlook.de>"
+		],
+		"keywords": [
+			"stock exchange",
+			"stock analysis",
+			"stock alerts"
+		],
+		"licenseInformation": {
+			"type": "free",
+			"license": "MIT"
+		},
+		"platform": "Javascript/Node.js",
+		"icon": "portfolio.png",
+		"enabled": true,
+		"extIcon": "https://raw.githubusercontent.com/iot-heva/ioBroker.portfolio/main/admin/portfolio.png",
+		"readme": "https://github.com/iot-heva/ioBroker.portfolio/blob/main/README.md",
+		"loglevel": "info",
+		"tier": 3,
+		"mode": "daemon",
+		"type": "misc-data",
+		"compact": true,
+		"connectionType": "cloud",
+		"dataSource": "poll",
+		"adminUI": {
+			"config": "json"
+		},
+		"dependencies": [
+			{
+				"js-controller": ">=6.0.11"
+			}
+		],
+		"globalDependencies": [
+			{
+				"admin": ">=7.0.23"
+			}
+		]
+	},
+	"native": {
+		"username": "",
+		"password": "",
+		"syncTime": "",
+		"isinChk": false,
+		"symbolChk": false,
+		"nameChk": false,
+		"currencyChk": false,
+		"countryChk": false,
+		"lastChk": true,
+		"highChk": false,
+		"lowChk": false,
+		"prevDayChk": false,
+		"performanceChk": false,
+		"w52CloseChk": false,
+		"w52HighChk": false,
+		"w52HighDateChk": false,
+		"w52LowChk": false,
+		"w52LowDateChk": false,
+		"historyInstance": "",
+		"historyDays": 30,
+		"regressionChk": false,
+		"averageChk": false,
+		"messageInstance": "",
+		"messageSound": "",
+		"limitHighChk": false,
+		"limitHighSent": false,
+		"limitLowChk": false,
+		"limitLowSent": false,
+		"regressionHighChk": false,
+		"regressionHighSent": false,
+		"regressionLowChk": false,
+		"regressionLowSent": false,
+		"averageHighChk": false,
+		"averageHighSent": false,
+		"averageLowChk": false,
+		"averageLowSent": false,
+		"isinsTable": []
+	},
+	"encryptedNative": ["password"],
+	"objects": [],
+	"instanceObjects": []
+}

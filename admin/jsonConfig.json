@@ -1,0 +1,269 @@
+{
+  "i18n": true,
+  "type": "tabs",
+  "items": {
+    "_generalTab": {
+      "label": "lblGeneral",
+      "type": "panel",
+      "items": {
+        "_credentials": {
+          "type": "panel",
+          "items": {
+            "username": {
+              "type": "text",
+              "label": "lblUsername",
+              "sm": 6,
+              "md": 4
+            },
+            "password": {
+              "type": "password",
+              "label": "lblPassword",
+              "sm": 6,
+              "md": 4
+            },
+            "syncTime": {
+              "type": "cron",
+              "simple": true,
+              "label": "lblSyncTime",
+              "sm": 6,
+              "md": 4
+            }
+          }
+        },
+        "_divider1": {
+          "type": "divider",
+          "height": 2
+        },
+        "_fieldsText": {
+            "newLine": true,
+            "type": "staticText",
+            "text": "lblFields"
+        },
+        "_fieldsGrid": {
+          "type": "panel",
+          "items": {
+            "_fields1": {
+              "type": "panel",
+              "sm": 6,
+              "md": 4,
+              "items": {
+                "isinChk": { "type": "checkbox", "label": "lblIsin" },
+                "symbolChk": { "type": "checkbox", "label": "lblSymbol" },
+                "nameChk": { "type": "checkbox", "label": "lblName" },
+                "currencyChk": { "type": "checkbox", "label": "lblCurrency" },
+                "countryChk": { "type": "checkbox", "label": "lblCountry" }
+              }
+            },
+            "_fields2": {
+              "type": "panel",
+              "sm": 6,
+              "md": 4,
+              "items": {
+                "lastChk": { "type": "checkbox", "label": "lblLast", "default": true, "disabled": "true" },
+                "highChk": { "type": "checkbox", "label": "lblHigh" },
+                "lowChk": { "type": "checkbox", "label": "lblLow" },
+                "prevDayChk": { "type": "checkbox", "label": "lblPrevDay" },
+                "performanceChk": { "type": "checkbox", "label": "lblPerformance" }
+              }
+            },
+            "_fields3": {
+              "type": "panel",
+              "sm": 6,
+              "md": 4,
+              "items": {
+                "w52CloseChk": { "type": "checkbox", "label": "lblW52Close" },
+                "w52HighChk": { "type": "checkbox", "label": "lblW52High" },
+                "w52HighDateChk": { "type": "checkbox", "label": "lblW52HighDate" },
+                "w52LowChk": { "type": "checkbox", "label": "lblW52Low" },
+                "w52LowDateChk": { "type": "checkbox", "label": "lblW52LowDate" }
+              }
+            }
+          }
+        },
+        "_divider2": {
+          "type": "divider",
+          "height": 2
+        },
+        "_additionalGrid": {
+          "type": "panel",
+          "items": {
+            "_history": {
+              "type": "panel",
+              "sm": 6,
+              "md": 4,
+              "items": {
+                "historyInstance": {
+                  "type": "instance",
+                  "adapter": "_dataSources",
+                  "label": "lblHistoryInstance"
+                },
+                "historyDays": {
+                  "type": "number",
+                  "label": "lblHistoryDays",
+                  "default": 30,
+                  "min": 1,
+                  "step": 1,
+                  "unit": "lblHistoryDaysUnit"}
+              }
+            },
+            "_calculation": {
+              "type": "panel",
+              "sm": 6,
+              "md": 4,
+              "items": {
+                "_calculationText": { "type": "staticText", "text": "lblCalculation" },
+                "regressionChk": { "type": "checkbox", "label": "lblCalculateRegressionEnabled" },
+                "averageChk": { "type": "checkbox", "label": "lblCalculateAverageEnabled" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_watchTab": {
+      "label": "lblWatch",
+      "type": "panel",
+      "items": {
+        "_notification": {
+          "type": "panel",
+          "sm": 6,
+          "md": 3,
+          "items": {
+            "messageInstance": {
+              "type": "instance",
+              "label": "lblMessageInstance",
+              "adapter": "",
+              "adapters": [
+                "email",
+                "pushover",
+                "pushsafer",
+                "telegram",
+                "signal-cmb",
+                "whatsapp-cmb"
+              ]
+            },
+            "messageSound": {
+              "type": "text",
+              "label": "lblMessageSound",
+              "maxLength": 13
+            }
+          }
+        },
+        "_limitAlert": {
+          "type": "panel",
+          "sm": 6,
+          "md": 3,
+          "items": {
+            "_limitAlertText": { "type": "staticText", "text": "lblLimitAlert" },
+            "limitHighChk": { "type": "checkbox", "label": "lblLimitHighEnabled" },
+            "limitLowChk": { "type": "checkbox", "label": "lblLimitLowEnabled" }
+          }
+        },
+        "_regressionAlert": {
+          "type": "panel",
+          "sm": 6,
+          "md": 3,
+          "items": {
+            "_regressionAlertText": { "type": "staticText", "text": "lblRegressionAlert" },
+            "regressionHighChk": { "type": "checkbox", "label": "lblRegressionHighEnabled" },
+            "regressionLowChk": { "type": "checkbox", "label": "lblRegressionLowEnabled" }
+          }
+        },
+        "_averageAlert": {
+          "type": "panel",
+          "sm": 6,
+          "md": 3,
+          "items": {
+            "_averageAlertText": { "type": "staticText", "text": "lblAverageAlert" },
+            "averageHighChk": { "type": "checkbox", "label": "lblAverageHighEnabled" },
+            "averageLowChk": { "type": "checkbox", "label": "lblAverageLowEnabled" }
+          }
+        },
+        "isinsTable": {
+          "newLine": true,
+          "type": "table",
+          "export": true,
+          "import": true,
+          "sm": 12,
+          "md": 12,
+          "uniqueColumns": ["isin"],
+          "items": [
+              {
+                  "type": "text",
+                  "attr": "isin",
+                  "title": "lblIsin",
+                  "sort": true,
+                  "width": "15%"
+              },
+              {
+                  "type": "number",
+                  "min": 0,
+                  "default": 0,
+                  "attr": "limitHigh",
+                  "title": "lblLimitHigh",
+                  "sort": true,
+                  "width": "10%"
+              },
+              {
+                  "type": "number",
+                  "min": 0,
+                  "default": 0,
+                  "attr": "limitLow",
+                  "title": "lblLimitLow",
+                  "sort": true,
+                  "width": "10%"
+              },
+              {
+                  "type": "number",
+                  "attr": "regressionHigh",
+                  "title": "lblRegressionHigh",
+                  "min": -100,
+                  "max": 100,
+                  "step": 1,
+                  "default": 0,
+                  "unit": "%",
+                  "sort": true,
+                  "width": "10%"
+              },
+              {
+                  "type": "number",
+                  "attr": "regressionLow",
+                  "title": "lblRegressionLow",
+                  "min": -100,
+                  "max": 100,
+                  "step": 1,
+                  "default": 0,
+                  "unit": "%",
+                  "sort": true,
+                  "width": "10%"
+              },
+              {
+                  "type": "number",
+                  "attr": "averageHigh",
+                  "title": "lblAverageHigh",
+                  "min": -100,
+                  "max": 100,
+                  "step": 1,
+                  "default": 0,
+                  "unit": "%",
+                  "sort": true,
+                  "width": "10%"
+              },
+              {
+                  "type": "number",
+                  "attr": "averageLow",
+                  "title": "lblAverageLow",
+                  "min": -100,
+                  "max": 100,
+                  "step": 1,
+                  "default": 0,
+                  "unit": "%",
+                  "sort": true,
+                  "width": "10%"
+              }
+            ]
+        }
+      }
+    }
+  }
+}
