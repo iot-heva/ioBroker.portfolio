@@ -5,6 +5,8 @@
 	"lblPassword": "Password",
 	"lblSyncTime": "Synchronization time",
 	"lblTestConnection": "Test",
+	"lblTestSuccess": "Test successful",
+	"lblTestError": "Failed",
 	"lblFields": "Enable query fields",
 	"lblIsin": "ISIN",
 	"lblSymbol": "Symbol",

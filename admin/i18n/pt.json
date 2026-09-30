@@ -5,6 +5,8 @@
 	"lblPassword": "Senha",
 	"lblSyncTime": "Tempo de sincronização",
 	"lblTestConnection": "Testar",
+	"lblTestSuccess": "Teste bem-sucedido",
+	"lblTestError": "Falhou",
 	"lblFields": "Ativar campos de consulta",
 	"lblIsin": "ISIN",
 	"lblSymbol": "Símbolo",

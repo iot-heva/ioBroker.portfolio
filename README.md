@@ -31,6 +31,11 @@ Create an account on https://www.finanzen.net/, everything else is in the adapte
 
 ## Changelog
 
+### **1.1.0 (work in progress)**
+* (@heva13) added language selection for notification
+* (@heva13) added retry for failed API requests
+* (@heva13) added notification for failed API login
+
 ### **1.0.0 (2026-10-13)**
 * (@heva13) initial release
 

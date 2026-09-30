@@ -62,7 +62,8 @@ class Portfolio extends utils.Adapter {
 						await this.writeState(this.config.highChk, row.isin, "high", data.high);
 						await this.writeState(this.config.lowChk, row.isin, "low", data.low);
 						await this.writeState(this.config.prevDayChk, row.isin, "prevDay", data.prevDay);
-						await this.writeState(this.config.performanceChk, row.isin, "performance", data.performance);
+						// eslint-disable-next-line prettier/prettier
+						await this.writeState(this.config.performanceChk, row.isin, "performance", data.performanceCurrentYear);
 
 						await this.writeState(this.config.w52CloseChk, row.isin, "w52Close", data.w52Close);
 						await this.writeState(this.config.w52HighChk, row.isin, "w52High", data.w52High);
@@ -567,9 +568,12 @@ class Portfolio extends utils.Adapter {
 				try {
 					const session = await this.getToken(this.config.username, this.config.password);
 					await this.probeAPI(session, "DE0005810055");
-					this.sendTo(obj.from, obj.command, { success: true }, obj.callback);
+
+					const message = `${I18n.t("lblTestSuccess")}`;
+					this.sendTo(obj.from, obj.command, { result: message }, obj.callback);
 				} catch (error) {
-					this.sendTo(obj.from, obj.command, { success: false, error: error.message }, obj.callback);
+					const message = `${I18n.t("lblTestError")}: ${error.message}`;
+					this.sendTo(obj.from, obj.command, { error: message }, obj.callback);
 				}
 			}
 		} catch (error) {
