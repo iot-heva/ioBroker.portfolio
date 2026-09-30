@@ -4,6 +4,7 @@
 	"lblUsername": "Gebruikersnaam",
 	"lblPassword": "Wachtwoord",
 	"lblSyncTime": "Synchronisatietijd",
+	"lblTestConnection": "Testen",
 	"lblFields": "Queryvelden inschakelen",
 	"lblIsin": "ISIN",
 	"lblSymbol": "Symbool",

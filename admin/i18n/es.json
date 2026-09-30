@@ -4,6 +4,7 @@
 	"lblUsername": "Nombre de usuario",
 	"lblPassword": "Contraseña",
 	"lblSyncTime": "Tiempo de sincronización",
+	"lblTestConnection": "Probar",
 	"lblFields": "Activar campos de consulta",
 	"lblIsin": "ISIN",
 	"lblSymbol": "Símbolo",

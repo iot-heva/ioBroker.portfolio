@@ -18,6 +18,7 @@ class Portfolio extends utils.Adapter {
 		});
 		this.on("ready", this.onReady.bind(this));
 		this.on("unload", this.onUnload.bind(this));
+		this.on("message", this.onMessage.bind(this));
 		this.dailyJob = null;
 		this.syncJob = null;
 	}
@@ -44,6 +45,7 @@ class Portfolio extends utils.Adapter {
 
 			if (Array.isArray(isins) && isins.length > 0) {
 				const session = await this.getToken(this.config.username, this.config.password);
+				await this.probeAPI(session, isins[0].isin);
 
 				for (const row of isins) {
 					try {
@@ -357,6 +359,27 @@ class Portfolio extends utils.Adapter {
 	}
 
 	/**
+	 * Probe the API to check if the specified instrument is accessible and has valid data
+	 *
+	 * @param {string} token - The JWT token for authentication
+	 * @param {string} isin - The ISIN identifier for the instrument
+	 * @returns {Promise<boolean>} - True if the probe was successful, false otherwise
+	 */
+	async probeAPI(token, isin) {
+		const detail = await this.getData(token, isin);
+
+		if (detail && typeof detail === "object" && "message" in detail) {
+			throw new Error(String(detail.message));
+		}
+
+		if (detail && typeof detail === "object" && "last" in detail) {
+			return true;
+		}
+
+		return false;
+	}
+
+	/**
 	 * Retrieve JWT token for the specified username and password
 	 *
 	 * @param {string} username - The username for authentication
@@ -364,7 +387,6 @@ class Portfolio extends utils.Adapter {
 	 * @returns {Promise<string>} - The JWT token for the authenticated session
 	 */
 	async getToken(username, password) {
-		// AWS Cognito (Amplify) config of finanzen.net zero, taken from the web app config.
 		const pool = new CognitoUserPool({
 			UserPoolId: "eu-central-1_W7ZDh3Al1",
 			ClientId: "6hcbp28i4mvooqt0edcq5u284s",
@@ -531,6 +553,27 @@ class Portfolio extends utils.Adapter {
 		if (this.log.level === "debug") {
 			this.log.debug("Starting initial synchronization...");
 			await this.syncJobExecution();
+		}
+	}
+
+	/**
+	 * Is called when the admin interface or other instances send a message to this adapter.
+	 *
+	 * @param {ioBroker.Message} obj - The message object containing the command and other data.
+	 */
+	async onMessage(obj) {
+		try {
+			if (obj && obj.command === "testConnection") {
+				try {
+					const session = await this.getToken(this.config.username, this.config.password);
+					await this.probeAPI(session, "DE0005810055");
+					this.sendTo(obj.from, obj.command, { success: true }, obj.callback);
+				} catch (error) {
+					this.sendTo(obj.from, obj.command, { success: false, error: error.message }, obj.callback);
+				}
+			}
+		} catch (error) {
+			this.log.error(`Error during message handling: ${error.message}`);
 		}
 	}
 
