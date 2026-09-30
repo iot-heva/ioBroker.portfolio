@@ -28,11 +28,10 @@
               "sm": 6,
               "md": 3
             },
-            "testConnection": {
+            "_testButton": {
                 "type": "sendTo",
                 "label": "lblTestConnection",
                 "command": "testConnection",
-                "variant": "outlined",
                 "color": "primary",
                 "icon": "auth",
                 "timeout": 5000,

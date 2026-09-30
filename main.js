@@ -566,14 +566,14 @@ class Portfolio extends utils.Adapter {
 		try {
 			if (obj && obj.command === "testConnection") {
 				try {
+					this.log.info("Testing connection with provided credentials.");
+
 					const session = await this.getToken(this.config.username, this.config.password);
 					await this.probeAPI(session, "DE0005810055");
 
-					const message = `${I18n.t("lblTestSuccess")}`;
-					this.sendTo(obj.from, obj.command, { result: message }, obj.callback);
+					this.log.info("Connection test successful.");
 				} catch (error) {
-					const message = `${I18n.t("lblTestError")}: ${error.message}`;
-					this.sendTo(obj.from, obj.command, { error: message }, obj.callback);
+					this.sendTo(obj.from, obj.command, { error: error.message }, obj.callback);
 				}
 			}
 		} catch (error) {
