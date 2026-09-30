@@ -45,7 +45,7 @@ class Portfolio extends utils.Adapter {
 
 			if (Array.isArray(isins) && isins.length > 0) {
 				const session = await this.getToken(this.config.username, this.config.password);
-				await this.probeAPI(session, isins[0].isin);
+				//await this.probeAPI(session, isins[0].isin);
 
 				for (const row of isins) {
 					try {
@@ -568,12 +568,16 @@ class Portfolio extends utils.Adapter {
 
 			if (obj.command === "testConnection") {
 				try {
+					this.log.debug("Testing connection with provided credentials.");
 					const session = await this.getToken(this.config.username, this.config.password);
 					await this.probeAPI(session, "DE0005810055");
+					this.log.debug("Connection test successful.");
 				} catch (error) {
 					this.sendTo(obj.from, obj.command, { error: error.message }, obj.callback);
 				}
 			}
+
+			this.log.debug("Finished handling message.");
 		} catch (error) {
 			this.log.error(`Error during message handling: ${error.message}`);
 		}
