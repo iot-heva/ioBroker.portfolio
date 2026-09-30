@@ -12,6 +12,7 @@ iobroker.*.tgz
 
 Thumbs.db
 .commitinfo
+secrets.json
 
 # i18n intermediate files
 admin/i18n/flat.txt
