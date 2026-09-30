@@ -1,0 +1,108 @@
+[
+    {
+        "name": "Deutsche Börse AG",
+        "isin": "DE0005810055",
+        "first": 290.2,
+        "high": 291.1,
+        "last": 291,
+        "low": 289.1,
+        "netChange": 4.2,
+        "percent": 1.46444,
+        "performanceCurrentYear": 31.5298,
+        "prevDay": 286.8,
+        "revenue": 953,
+        "w52Close": 228.4,
+        "w52High": 292.7,
+        "w52HighDate": "28.08.2026",
+        "w52low": 200.3,
+        "w52LowDate": "04.02.2026",
+        "instrumentType": 1,
+        "outstandingShares": 186300000,
+        "volume": 276719,
+        "currency": "EUR",
+        "date": "30.09.2026",
+        "exchange": "BMN",
+        "prevDayDatetime": "29.09.2026 22:13:33",
+        "pushIdentifier": "Y01015320001177233",
+        "sourceDatetime": "30.09.2026 09:55:09",
+        "symbol": "581005",
+        "time": "09:55:09",
+        "tkIdentifier": "1330,1177233,1330,814",
+        "wpkn": "581005",
+        "country": "Deutschland",
+        "branches": [
+            "Finanzdienstleister",
+            "Investmentbanken / Broker"
+        ],
+        "profile": "Die Deutsche Börse AG zählt zu den führenden Börsenorganisationen weltweit und betreibt mit der Frankfurter Wertpapierbörse die größte deutsche Börse. Zusätzlich betreibt sie mit Xetra® eine der führenden elektronischen Handelsplattformen global. Seit dem 23. Dezember 2002 ist die Aktie der Deutschen Börse AG Bestandteil des DAX. Mit der im Jahr 2007 durchgeführten Fusion der Terminbörse Eurex mit der US-amerikanischen ISE positioniert sich die Deutsche Börse AG als weltweit größter Betreiber transatlantischer Marktplätze für Derivate. Das Unternehmen gliedert seine Aktivitäten in die Segmente Xetra (Kassamarkt), Eurex (Terminmarkt), Clearstream, Market Data & Analytics sowie Information Technology und deckt damit alle wesentlichen Bereiche der Kapitalmarktinfrastruktur ab. Das Produkt- und Dienstleistungsportfolio der Deutschen Börse umfasst die überwachte Handelsausführung, Verrechnung, Abwicklung und Verwahrung von Wertpapieren sowie die Bereitstellung der notwendigen elektronischen Infrastruktur zur Marktinformation. Mit Standorten in verschiedenen Ländern ist die Deutsche Börse AG global präsent und bedient Kunden weltweit.",
+        "dividends": [
+            {
+                "year": "2020",
+                "dividendYieldPercentage": 2.15,
+                "dividend": 3
+            },
+            {
+                "year": "2021",
+                "dividendYieldPercentage": 2.18,
+                "dividend": 3.2
+            },
+            {
+                "year": "2022",
+                "dividendYieldPercentage": 2.23,
+                "dividend": 3.6
+            },
+            {
+                "year": "2023",
+                "dividendYieldPercentage": 2.04,
+                "dividend": 3.8
+            },
+            {
+                "year": "2024",
+                "dividendYieldPercentage": 1.8,
+                "dividend": 4
+            },
+            {
+                "year": "2025",
+                "dividendYieldPercentage": 1.88,
+                "dividend": 4.2
+            },
+            {
+                "year": "2026e",
+                "dividendYieldPercentage": 1.64,
+                "dividend": 4.71
+            }
+        ]
+    },
+    {
+        "name": "Finanzen.net MSCI World UCITS ETF USD Acc. oN",
+        "isin": "FR001400YYJ0",
+        "first": 5.2806,
+        "high": 5.3032,
+        "last": 5.297,
+        "low": 5.2738,
+        "netChange": 0.018,
+        "percent": 0.34097,
+        "performanceCurrentYear": 15.72324,
+        "prevDay": 5.279,
+        "revenue": 4715,
+        "w52Close": 4.433,
+        "w52High": 5.3198,
+        "w52HighDate": "23.09.2026",
+        "w52low": 4.3404,
+        "w52LowDate": "18.10.2025",
+        "instrumentType": 4,
+        "volume": 24939,
+        "currency": "EUR",
+        "date": "30.09.2026",
+        "exchange": "BMN",
+        "prevDayDatetime": "29.09.2026 22:47:13",
+        "pushIdentifier": "Y0101532000146046119",
+        "sourceDatetime": "30.09.2026 09:47:01",
+        "symbol": "ETF300",
+        "time": "09:47:01",
+        "tkIdentifier": "1330,146046119,1330,814",
+        "wpkn": "ETF300",
+        "branches": [],
+        "dividends": []
+    }
+]
