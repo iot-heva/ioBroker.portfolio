@@ -32,6 +32,7 @@
                 "type": "sendTo",
                 "label": "lblTestConnection",
                 "command": "testConnection",
+                "variant": "outlined",
                 "color": "primary",
                 "icon": "auth",
                 "timeout": 5000,

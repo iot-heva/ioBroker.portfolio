@@ -564,7 +564,9 @@ class Portfolio extends utils.Adapter {
 	 */
 	async onMessage(obj) {
 		try {
-			if (obj && obj.command === "testConnection") {
+			this.log.debug(`Incoming message ${obj.command} from ${obj.from}`);
+
+			if (obj.command === "testConnection") {
 				try {
 					this.log.info("Testing connection with provided credentials.");
 
