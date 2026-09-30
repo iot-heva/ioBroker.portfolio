@@ -5,8 +5,6 @@
 	"lblPassword": "Wachtwoord",
 	"lblSyncTime": "Synchronisatietijd",
 	"lblTestConnection": "Testen",
-	"lblTestSuccess": "Test geslaagd",
-	"lblTestError": "Mislukt",
 	"lblFields": "Queryvelden inschakelen",
 	"lblIsin": "ISIN",
 	"lblSymbol": "Symbool",

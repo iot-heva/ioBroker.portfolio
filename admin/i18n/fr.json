@@ -5,8 +5,6 @@
 	"lblPassword": "Mot de passe",
 	"lblSyncTime": "Heure de synchronisation",
 	"lblTestConnection": "Tester",
-	"lblTestSuccess": "Test réussi",
-	"lblTestError": "Échec",
 	"lblFields": "Activer les champs de requête",
 	"lblIsin": "ISIN",
 	"lblSymbol": "Symbole",
