@@ -4,7 +4,8 @@
 	"lblUsername": "Benutzername",
 	"lblPassword": "Passwort",
 	"lblSyncTime": "Synchronisationszeit",
-	"lblTestConnection": "Testen",
+	"lblConnectionTest": "Testen",
+	"lblConnectionIssue": "Kritischer Fehler beim Abrufen der Daten.",
 
 	"lblFields": "Abfragefelder aktivieren",
 	"lblIsin": "ISIN",

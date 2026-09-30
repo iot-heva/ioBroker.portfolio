@@ -44,6 +44,7 @@ class Portfolio extends utils.Adapter {
 			const isins = this.config.isinsTable;
 
 			if (Array.isArray(isins) && isins.length > 0) {
+				let processed = 0;
 				const session = await this.getToken(this.config.username, this.config.password);
 				//await this.probeAPI(session, isins[0].isin);
 
@@ -77,9 +78,15 @@ class Portfolio extends utils.Adapter {
 						await this.writeState(this.config.averageChk, row.isin, "average", metrics.average);
 
 						await this.checkLimits(row);
+						processed++;
 					} catch (error) {
 						this.log.error(`${row.isin} Error processing data: ${error.message}`);
 					}
+				}
+
+				if (processed === 0) {
+					this.log.warn("Critical error while fetching data.");
+					await this.sendNotification(this.namespace, "lblConnectionIssue", true);
 				}
 			}
 		} catch (error) {
@@ -270,8 +277,9 @@ class Portfolio extends utils.Adapter {
 	 *
 	 * @param {string} isin - The ISIN identifier for the instrument
 	 * @param {string} limit - The limit that triggered the notification
+	 * @param {boolean} override - An optional override message to send instead of the default message
 	 */
-	async sendNotification(isin, limit) {
+	async sendNotification(isin, limit, override = false) {
 		if (!this.config.messageInstance) {
 			return;
 		}
@@ -279,9 +287,15 @@ class Portfolio extends utils.Adapter {
 		const adapterType = this.config.messageInstance.split(".")[0];
 		let action = "send";
 		let payload = {};
+		let message = "";
 
-		const message = `${isin} ${I18n.t("lblMessageText")}: ${I18n.t(limit)}`;
-		this.log.debug(`${isin} Sending [${adapterType}] ${message}`);
+		if (override) {
+			message = `${I18n.t(limit)}`;
+			this.log.debug(`Sending [${adapterType}] ${message}`);
+		} else {
+			message = `${isin} ${I18n.t("lblMessageText")}: ${I18n.t(limit)}`;
+			this.log.debug(`${isin} Sending [${adapterType}] ${message}`);
+		}
 
 		switch (adapterType) {
 			case "email":
@@ -566,18 +580,20 @@ class Portfolio extends utils.Adapter {
 		try {
 			this.log.debug(`Incoming message ${obj.command} from ${obj.from}`);
 
-			if (obj.command === "testConnection") {
+			if (obj.command === "ConnectionTest") {
 				try {
 					this.log.debug("Testing connection with provided credentials.");
+
 					const session = await this.getToken(this.config.username, this.config.password);
 					await this.probeAPI(session, "DE0005810055");
+
 					this.log.debug("Connection test successful.");
+					this.sendTo(obj.from, obj.command, {}, obj.callback);
 				} catch (error) {
+					this.log.error(`Connection test error: ${error.message}`);
 					this.sendTo(obj.from, obj.command, { error: error.message }, obj.callback);
 				}
 			}
-
-			this.log.debug("Finished handling message.");
 		} catch (error) {
 			this.log.error(`Error during message handling: ${error.message}`);
 		}

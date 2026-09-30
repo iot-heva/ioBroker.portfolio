@@ -30,8 +30,8 @@
             },
             "_testButton": {
                 "type": "sendTo",
-                "label": "lblTestConnection",
-                "command": "testConnection",
+                "label": "lblConnectionTest",
+                "command": "ConnectionTest",
                 "variant": "outlined",
                 "color": "primary",
                 "icon": "auth",
