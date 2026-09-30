@@ -24,9 +24,10 @@ Create an account on https://www.finanzen.net/, everything else is in the adapte
 ### Functions
 - Retrieval of the configured stock prices (see watchlist)
 - Storage of additional data (see configuration)
-- Calculation of the moving average based on the history
-- Calculation of the linear regression (slope) based on the history
 - Notification when limits are exceeded or undershot
+- History based calculation of
+    - moving average
+    - linear regression (slope)
 
 ## Changelog
 

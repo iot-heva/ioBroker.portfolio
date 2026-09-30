@@ -4,6 +4,7 @@
 	"lblUsername": "Username",
 	"lblPassword": "Password",
 	"lblSyncTime": "Synchronization time",
+	"lblTestConnection": "Test",
 	"lblFields": "Enable query fields",
 	"lblIsin": "ISIN",
 	"lblSymbol": "Symbol",

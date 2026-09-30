@@ -6,27 +6,37 @@
       "label": "lblGeneral",
       "type": "panel",
       "items": {
-        "_credentials": {
+        "_basic": {
           "type": "panel",
           "items": {
             "username": {
               "type": "text",
               "label": "lblUsername",
               "sm": 6,
-              "md": 4
+              "md": 3
             },
             "password": {
               "type": "password",
               "label": "lblPassword",
               "sm": 6,
-              "md": 4
+              "md": 3
+            },
+            "getData": {
+                "type": "sendTo",
+                "label": "lblTestConnection",
+                "command": "testConnection",
+                "variant": "contained",
+                "color": "primary",
+                "showProcess": true,
+                "sm": 6,
+                "md": 3
             },
             "syncTime": {
               "type": "cron",
               "simple": true,
               "label": "lblSyncTime",
               "sm": 6,
-              "md": 4
+              "md": 3
             }
           }
         },
