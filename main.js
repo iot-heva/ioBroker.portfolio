@@ -311,7 +311,7 @@ class Portfolio extends utils.Adapter {
 			message = `${this.translate(limit)}`;
 			this.log.debug(`Sending [${adapterType}] ${message}`);
 		} else {
-			message = `${isin} ${this.translate("lblMessageText")}: ${this.translate(limit)}`;
+			message = `${this.translate("lblMessageText")}: ${this.translate(limit)}`;
 			this.log.debug(`${isin} Sending [${adapterType}] ${message}`);
 		}
 
