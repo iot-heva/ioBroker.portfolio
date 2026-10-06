@@ -279,6 +279,18 @@ class Portfolio extends utils.Adapter {
 	}
 
 	/**
+	 * Translate a key into the configured notification language (falls back to the system language)
+	 *
+	 * @param {string} key - Translation key
+	 * @param {...(string | number | boolean | null)} args - Optional parameters to replace %s
+	 * @returns {string} The translated text
+	 */
+	translate(key, ...args) {
+		const translated = I18n.getTranslatedObject(key, ...args);
+		return translated[this.config.messageLanguage] || I18n.t(key, ...args);
+	}
+
+	/**
 	 * Send notifications using the configured notification instance
 	 *
 	 * @param {string} isin - The ISIN identifier for the instrument
@@ -296,10 +308,10 @@ class Portfolio extends utils.Adapter {
 		let message = "";
 
 		if (override) {
-			message = `${I18n.t(limit)}`;
+			message = `${this.translate(limit)}`;
 			this.log.debug(`Sending [${adapterType}] ${message}`);
 		} else {
-			message = `${isin} ${I18n.t("lblMessageText")}: ${I18n.t(limit)}`;
+			message = `${isin} ${this.translate("lblMessageText")}: ${this.translate(limit)}`;
 			this.log.debug(`${isin} Sending [${adapterType}] ${message}`);
 		}
 
@@ -504,11 +516,7 @@ class Portfolio extends utils.Adapter {
 	 * Is called when databases are connected and adapter received configuration.
 	 */
 	async onReady() {
-		if (!this.config.messageLanguage) {
-			await I18n.init(path.join(__dirname, "admin"), this);
-		} else {
-			await I18n.init(path.join(__dirname, this.config.messageLanguage), this);
-		}
+		await I18n.init(path.join(__dirname, "admin"), this);
 
 		if (!this.config.username || !this.config.password) {
 			this.log.warn("No credentials found please enter your credentials in the instance settings");
