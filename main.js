@@ -1,5 +1,11 @@
 "use strict";
 
+/**
+ *  Created with support by following websites / many thanks to:
+ *  https://github.com/ioBroker/json-config
+ *  https://herwig.de/anleitungen/smarthome/iobroker/adapter-entwicklung.html
+ */
+
 const path = require("path");
 const utils = require("@iobroker/adapter-core");
 const schedule = require("node-schedule");
@@ -498,9 +504,12 @@ class Portfolio extends utils.Adapter {
 	 * Is called when databases are connected and adapter received configuration.
 	 */
 	async onReady() {
-		await I18n.init(path.join(__dirname, "admin"), this);
+		if (!this.config.messageLanguage) {
+			await I18n.init(path.join(__dirname, "admin"), this);
+		} else {
+			await I18n.init(path.join(__dirname, this.config.messageLanguage), this);
+		}
 
-		//Basic checks
 		if (!this.config.username || !this.config.password) {
 			this.log.warn("No credentials found please enter your credentials in the instance settings");
 			return;

@@ -6,33 +6,33 @@
 			"1.0.0": {
 				"de": "Erstveröffentlichung",
 				"en": "initial release",
-				"pt": "lançamento inicial",
-				"nl": "Eerste uitgave",
+				"es": "Versión inicial",
 				"fr": "Première version",
 				"it": "Versione iniziale",
-				"es": "Versión inicial",
-				"pl": "Pierwsze wydanie"
+				"nl": "Eerste uitgave",
+				"pl": "Pierwsze wydanie",
+				"pt": "lançamento inicial"
 			}
 		},
 		"titleLang": {
 			"de": "Portfolio",
 			"en": "Portfolio",
-			"pt": "Portfólio",
-			"nl": "Portefeuille",
+			"es": "Cartera",
 			"fr": "Portefeuille",
 			"it": "Portfolio",
-			"es": "Cartera",
-			"pl": "Teczka"
+			"nl": "Portefeuille",
+			"pl": "Teczka",
+			"pt": "Portfólio"
 		},
 		"desc": {
 			"en": "Regular stock price checks, fundamental analysis, price alerts, etc.",
 			"de": "Regelmäßige Aktienkursprüfungen, Fundamentalanalysen, Preisalarme usw.",
-			"pt": "Verificações regulares de preços de ações, análises fundamentais, alertas de preços, etc.",
-			"nl": "Regelmatige controles van de aandelenkoersen, fundamentele analyses, prijswaarschuwingen, enz.",
+			"es": "Comprobaciones periódicas del precio de las acciones, análisis fundamentales, alertas de precios, etc.",
 			"fr": "Vérifications régulières du cours des actions, analyse fondamentale, alertes de prix, etc.",
 			"it": "Controlli regolari del prezzo delle azioni, analisi fondamentale, avvisi sui prezzi, ecc.",
-			"es": "Comprobaciones periódicas del precio de las acciones, análisis fundamentales, alertas de precios, etc.",
-			"pl": "Regularne kontrole cen akcji, analizy fundamentalne, alerty cenowe itp."
+			"nl": "Regelmatige controles van de aandelenkoersen, fundamentele analyses, prijswaarschuwingen, enz.",
+			"pl": "Regularne kontrole cen akcji, analizy fundamentalne, alerty cenowe itp.",
+			"pt": "Verificações regulares de preços de ações, análises fundamentais, alertas de preços, etc."
 		},
 		"authors": [
 			"heva13 <iot.heva@outlook.de>"
@@ -98,6 +98,7 @@
 		"averageChk": false,
 		"messageInstance": "",
 		"messageSound": "",
+		"messageLanguage": "en",
 		"limitHighChk": false,
 		"limitHighSent": false,
 		"limitLowChk": false,

@@ -155,6 +155,21 @@
                 "whatsapp-cmb"
               ]
             },
+            "messageLanguage": {
+              "type": "select",
+              "label": "lblMessageLanguage",
+              "format":"dropdown",
+              "options": [
+                { "value": "de", "label": "Deutsch" },
+                { "value": "en", "label": "English" },
+                { "value": "es", "label": "Español" },
+                { "value": "fr", "label": "Français"},
+                { "value": "it", "label": "Italiano" },
+                { "value": "nl", "label": "Nederlands" },
+                { "value": "pl", "label": "Polski" },
+                { "value": "pt", "label": "Português" }
+              ]
+            },
             "messageSound": {
               "type": "text",
               "label": "lblMessageSound",
