@@ -22,9 +22,9 @@ It is recommended to create a separate user for ioBroker. As the usage of the ap
 Create an account on https://www.finanzen.net/, everything else is in the adapter settings
 
 ### Functions
-- Retrieval of the configured stock prices (see watchlist)
-- Storage of additional data (see configuration)
-- Notification when limits are exceeded or undershot
+- Retrieval of the configured stock prices
+- Retrieval of additional asset data
+- Notification when limits are reached
 - History based calculation of
     - moving average
     - linear regression (slope)
@@ -32,9 +32,9 @@ Create an account on https://www.finanzen.net/, everything else is in the adapte
 ## Changelog
 
 ### **1.1.0 (work in progress)**
+* (@heva13) added connection test in settings
 * (@heva13) added language selection for notification
-* (@heva13) added retry for failed API requests
-* (@heva13) added notification for failed API login
+* (@heva13) added notification for critical API issues
 
 ### **1.0.0 (2026-10-13)**
 * (@heva13) initial release

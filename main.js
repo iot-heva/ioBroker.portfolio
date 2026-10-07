@@ -34,6 +34,7 @@ class Portfolio extends utils.Adapter {
 	 */
 	async dailyJobExecution() {
 		// Reset message flags for daily notifications
+		this.criticalErrorSent = false;
 		this.limitHighSent = false;
 		this.limitLowSent = false;
 		this.averageHighSent = false;
@@ -90,9 +91,10 @@ class Portfolio extends utils.Adapter {
 					}
 				}
 
-				if (processed === 0) {
+				if (!this.criticalErrorSent && processed === 0) {
 					this.log.warn("Critical error while fetching data.");
 					await this.sendNotification(this.namespace, "lblConnectionIssue", true);
+					this.criticalErrorSent = true;
 				}
 			}
 		} catch (error) {

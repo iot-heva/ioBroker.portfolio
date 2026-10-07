@@ -111,6 +111,7 @@
 		"averageHighSent": false,
 		"averageLowChk": false,
 		"averageLowSent": false,
+		"criticalErrorSent": false,
 		"isinsTable": []
 	},
 	"encryptedNative": ["password"],
